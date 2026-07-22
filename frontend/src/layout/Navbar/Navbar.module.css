@@ -1,0 +1,102 @@
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background var(--dur-base), box-shadow var(--dur-base),
+    border-color var(--dur-base);
+  border-bottom: 1px solid transparent;
+}
+
+/* Ao rolar, a barra ganha vidro (glassmorphism) + hairline */
+.scrolled {
+  background: var(--glass);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border-bottom-color: var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.inner {
+  max-width: var(--container);
+  margin-inline: auto;
+  height: var(--navbar-h);
+  padding-inline: var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  color: var(--navy-800);
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(var(--space-4), 2vw, var(--space-7));
+}
+
+.link {
+  position: relative;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding-block: var(--space-2);
+  transition: color var(--dur-fast);
+}
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.link:hover {
+  color: var(--navy-800);
+}
+.link:hover::after,
+.active::after {
+  transform: scaleX(1);
+}
+.active {
+  color: var(--accent-strong);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  background: var(--navy-950);
+  color: var(--white);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  transition: transform var(--dur-fast), box-shadow var(--dur-fast), background var(--dur-fast);
+}
+.cta:hover {
+  transform: translateY(-2px);
+  background: var(--navy-800);
+  box-shadow: var(--shadow-md);
+}
+
+/* No mobile a navegação vira a barra inferior (MobileTabBar) */
+@media (max-width: 768px) {
+  .bar {
+    display: none;
+  }
+}

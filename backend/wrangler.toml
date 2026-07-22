@@ -1,0 +1,30 @@
+name = "casamento-thalia-gian"
+main = "src/index.ts"
+compatibility_date = "2024-12-18"
+compatibility_flags = ["nodejs_compat"]
+
+# Serve o frontend buildado (SPA) pelo mesmo Worker — sem CORS, uma única URL.
+[assets]
+directory = "../frontend/dist"
+not_found_handling = "single-page-application"
+# Garante que requests /api/* executem o Worker antes de tentar servir um asset.
+binding = "ASSETS"
+
+# Banco de dados D1 (SQLite). Crie com:
+#   wrangler d1 create casamento-db
+# e cole o database_id retornado abaixo.
+[[d1_databases]]
+binding = "DB"
+database_name = "casamento-db"
+database_id = "COLE_AQUI_O_DATABASE_ID"
+migrations_dir = "migrations"
+
+# Segredos (defina com `wrangler secret put NOME`):
+#   JWT_SECRET             → chave para assinar tokens de sessão do admin
+#   CLOUDINARY_API_SECRET  → segredo do Cloudinary (não versionar!)
+[vars]
+APP_ENV = "production"
+# Cloudinary (armazenamento de fotos, grátis, sem cartão).
+# cloud_name e api_key não são sensíveis; preencha com os seus:
+CLOUDINARY_CLOUD_NAME = "SEU_CLOUD_NAME"
+CLOUDINARY_API_KEY = "SUA_API_KEY"

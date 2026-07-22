@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Photo Gallery - Gian &amp; Thalia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#001f29",
+                      "on-error": "#ffffff",
+                      "secondary-fixed": "#d5e3ff",
+                      "primary-fixed-dim": "#afc8f0",
+                      "inverse-surface": "#2c3134",
+                      "secondary-fixed-dim": "#a7c8ff",
+                      "on-surface-variant": "#43474e",
+                      "tertiary": "#00070b",
+                      "tertiary-fixed-dim": "#76d2f6",
+                      "primary": "#000613",
+                      "surface-container-high": "#e4e9ed",
+                      "secondary": "#005eb2",
+                      "surface-bright": "#f6fafe",
+                      "on-primary-container": "#6f88ad",
+                      "on-surface": "#171c1f",
+                      "surface-container": "#eaeef2",
+                      "tertiary-fixed": "#baeaff",
+                      "on-secondary-fixed": "#001b3b",
+                      "error-container": "#ffdad6",
+                      "on-secondary-container": "#002e5d",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-container": "#2891b2",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#004788",
+                      "on-tertiary-fixed-variant": "#004d62",
+                      "primary-fixed": "#d4e3ff",
+                      "surface-container-highest": "#dfe3e7",
+                      "primary-container": "#001f3f",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#d6dade",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f0f4f8",
+                      "outline": "#74777f",
+                      "surface-tint": "#476083",
+                      "on-background": "#171c1f",
+                      "secondary-container": "#4597fe",
+                      "outline-variant": "#c4c6cf",
+                      "error": "#ba1a1a",
+                      "surface-variant": "#dfe3e7",
+                      "inverse-on-surface": "#edf1f5",
+                      "tertiary-container": "#00222d",
+                      "inverse-primary": "#afc8f0",
+                      "background": "#f6fafe",
+                      "on-primary-fixed-variant": "#2f486a",
+                      "on-primary-fixed": "#001c3a",
+                      "surface": "#f6fafe"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1200px",
+                      "section-gap": "120px",
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "unit": "8px",
+                      "section-gap-mobile": "64px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "display-hero-mobile": [
+                              "Playfair Display"
+                      ],
+                      "display-hero": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-hero-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-hero": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .soft-shadow {
+            box-shadow: 0 20px 40px rgba(0, 31, 63, 0.08);
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-auto-rows: 200px;
+            gap: 24px;
+        }
+        .masonry-item-large {
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+        .masonry-item-tall {
+            grid-row: span 2;
+        }
+        .masonry-item-wide {
+            grid-column: span 2;
+        }
+        
+        .photo-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .group:hover .photo-overlay {
+            opacity: 1;
+        }
+        
+        /* Custom scrollbar for gallery modal */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f6fafe; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #afc8f0; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6f88ad; 
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Top Navigation -->
+<nav class="bg-white/70 dark:bg-primary/70 backdrop-blur-xl font-body-md text-body-md uppercase tracking-widest fixed top-0 w-full z-50 border-b border-white/20 dark:border-primary-fixed/10 shadow-sm transition-all duration-500 ease-in-out hover:scale-105 hidden md:block">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md text-primary dark:text-primary-fixed italic" href="#">Gian &amp; Thalia</a>
+<div class="flex space-x-8">
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary transition-colors hover:opacity-80 transition-opacity duration-300" href="#">The Story</a>
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary transition-colors hover:opacity-80 transition-opacity duration-300" href="#">The Venue</a>
+<!-- We consider Gallery a top level destination for this view -->
+<a class="text-secondary dark:text-secondary-fixed border-b-2 border-secondary dark:border-secondary-fixed pb-1 hover:opacity-80 transition-opacity duration-300" href="#">Gallery</a>
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary transition-colors hover:opacity-80 transition-opacity duration-300" href="#">Travel</a>
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary transition-colors hover:opacity-80 transition-opacity duration-300" href="#">Registry</a>
+</div>
+<button class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-full font-label-sm hover:opacity-90 transition-opacity shadow-sm">RSVP</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-[100px] pb-section-gap px-gutter max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<header class="text-center mb-section-gap/2 mt-12">
+<h1 class="font-display-hero text-display-hero text-primary mb-6">Moments to Remember</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                A collection of beautiful memories leading up to our special day. We'd love for you to contribute your own favorite moments with us.
+            </p>
+</header>
+<!-- Upload Dropzone (Bento Grid style integration) -->
+<div class="mb-section-gap glass-panel soft-shadow rounded-xl p-8 border border-white/50 text-center relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary-fixed/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<div class="relative z-10 max-w-xl mx-auto flex flex-col items-center justify-center py-12 border-2 border-dashed border-outline-variant rounded-lg bg-surface-container-lowest/50 hover:bg-surface-container-lowest transition-colors cursor-pointer" id="dropzone">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 0;">cloud_upload</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Share Your Moments</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Drag and drop your photos here, or click to browse.</p>
+<button class="px-8 py-3 border border-secondary text-secondary rounded-full font-label-sm uppercase tracking-widest hover:bg-secondary hover:text-white transition-all duration-300">Select Photos</button>
+</div>
+</div>
+<!-- Masonry Gallery -->
+<div class="masonry-grid">
+<!-- Photo 1 (Large) -->
+<div class="masonry-item-large relative rounded-xl overflow-hidden group soft-shadow cursor-pointer" onclick="openLightbox('placeholder')">
+<img alt="Gallery image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A beautiful, candid high-resolution photograph of a couple laughing together in an elegant, sunlit outdoor garden. The scene is bathed in soft, natural morning light, creating a bright, modern, and romantic aesthetic. The color palette emphasizes soft greens, creamy whites, and subtle navy blue accents. The mood is intimate and joyful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM18_bAE8IEM5D4u1Tqb5Dws5uwwPMaRMVKJhV5BbX5O9IgzOxrvGm9rWFhtE3A5HrJubXTCMxFMzVUUdrUCM6zcIvl8GJnlF3gopVI6WJevA5paeRh3IeIX2RuI7dcztgAg9o5HmvIRYZMNzsxxVPZx8-sCerC00Qnr2RBYFucmQeLWq3-OCRgeHQ0dJtKT9TVIr0VCyBtoaw9-s_DU5GlOARnKe-N8BDQZcH_j1IJHdTYlXj2seuWK5LJ9Es_Rri4DdLrOcUCrU8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent photo-overlay flex flex-col justify-end p-6">
+<p class="font-headline-md text-white text-2xl mb-1">Engagement Shoot</p>
+<p class="font-body-md text-surface-container-high text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">person</span> 
+                        Captured by Sarah M.
+                    </p>
+</div>
+</div>
+<!-- Photo 2 (Tall) -->
+<div class="masonry-item-tall relative rounded-xl overflow-hidden group soft-shadow cursor-pointer" onclick="openLightbox('placeholder')">
+<img alt="Gallery image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A stunning close-up photograph of an elegant floral arrangement resting on a clean, marble table. The lighting is soft and diffused, creating a serene and sophisticated atmosphere. The color palette is minimal, featuring crisp whites, muted greens, and subtle hints of royal blue. The composition is modern and highly curated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxEk8g0TZdchVfunZFs4dOzhuQastaI8fV8oN5utdUYlsq-biAvztCDcEWkhTRjvPQsJg-r5Z6cAJbyCrDkaowGSYG6V6iSfoxZJhs-4E_vjPGPII3JMhh6WxM_K0Mk7gTnl5UDHvktkW3WFrDY6tfb9ti5qQFFdu04HVKUU6DQSq71xDKWdIeJA4jkqUny4Ct-C5saGL_sgCPcoKK7PjNyS5PrEBRk7qieUciSCTvAdtZzKGoX3a4fCYvOMt_2YcHaNSPXYqn4IuW"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent photo-overlay flex flex-col justify-end p-6">
+<p class="font-headline-md text-white text-xl mb-1">The Details</p>
+<p class="font-body-md text-surface-container-high text-sm">Thalia</p>
+</div>
+</div>
+<!-- Photo 3 -->
+<div class="relative rounded-xl overflow-hidden group soft-shadow cursor-pointer" onclick="openLightbox('placeholder')">
+<img alt="Gallery image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A candid, warm photograph of a group of friends raising elegant champagne glasses in a toast. The setting is a chic, modern rooftop patio at dusk, with soft ambient string lights providing a warm glow. The overall aesthetic is celebratory, high-end, and intimate, utilizing deep blues and warm gold tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU568O5fYqWVMUsZ_qgid0M0GCpaDiZ7kAXTK8n5L-qiplgN4jRhVaAuVqTkh-SyWcBtdJVM9hcVXlxIYFfbcg2m_ic5asIa6x1Rppoz8JghlizBFiJim4dOWxc_bKX4d16LOO3L9Zp1g2beycQdifr6lOXhVC8VSEBHAoo7H_SslIqKwVRq1LYnYdgGOaXtweafxOeNF-TZ0ivxO85kTtPuvzSj1IHQxAsEMtgFpXKRCnXW7-lsVEEedsE4RHplj1e8Yw7F8cNtrE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent photo-overlay flex flex-col justify-end p-6">
+<p class="font-headline-md text-white text-lg mb-1">Cheers!</p>
+<p class="font-body-md text-surface-container-high text-sm">Michael T.</p>
+</div>
+</div>
+<!-- Photo 4 -->
+<div class="relative rounded-xl overflow-hidden group soft-shadow cursor-pointer" onclick="openLightbox('placeholder')">
+<img alt="Gallery image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A beautiful detail shot of elegant wedding invitations beautifully styled on a textured linen surface. The lighting is bright and airy, highlighting the fine typography and sophisticated design. The color palette incorporates crisp whites, elegant greys, and deep navy accents, matching a modern, editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx6PQ82KqW6C2j19_JpFraXnB33pelbGp3JArwp6LKM44uDV5MIvakKIijLUiL1v-2_Vjp_HABuU55glV2Qwu0Hp7U4xkpvImemuUmfoVBA5qBSTya9j2ec4JjPQjDcJw4NNK6_r1fiT8q4y-MmtZTuAhe1f6MzxHjnny3n2o-ktrZbj2y4dOP7AJveuUjTku--ey7__uaZzDy8s1idWYsDyE3dtxnkG6tIOq7KHgsE1klrDUCSvruQtSoOG7WeqA0QSyVBQqunGvR"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent photo-overlay flex flex-col justify-end p-6">
+<p class="font-body-md text-surface-container-high text-sm">Gian</p>
+</div>
+</div>
+<!-- Photo 5 (Wide) -->
+<div class="masonry-item-wide relative rounded-xl overflow-hidden group soft-shadow cursor-pointer" onclick="openLightbox('placeholder')">
+<img alt="Gallery image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sweeping, breathtaking landscape photograph of a grand, historic vineyard estate at golden hour. The long shadows and warm, soft sunlight create a romantic and timeless atmosphere. The image feels expansive and aspirational, utilizing rich greens, warm golds, and a clear, soft blue sky. High-end editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL53Mj3cJGqM5vMcJqWGTv4GgOdR_BFVtVT2bSTUu80L8WybAUQuYJKS61GsaZrJbOrQ0wZmZbmU4otXgp-S8kMnMY5UdznXynOAAehfuyaeD1NbmP-yqF0ZTe-Cco5zPspKznndtS07HS6Zq7sOWpWvRH7_dnIXAPvG3hua2qjZNPw4kozWralZAyVy_pz-fe8f9Cr-r4caMoQitBHc23vPf-L-6-fKaSPJqCVEwYqaWPqfJ7dBlZIhD4i_WbuTIPLlqRc6ceMX6a"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent photo-overlay flex flex-col justify-end p-6">
+<p class="font-headline-md text-white text-2xl mb-1">Venue Scouting</p>
+<p class="font-body-md text-surface-container-high text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">person</span> 
+                        Gian &amp; Thalia
+                    </p>
+</div>
+</div>
+<!-- Photo 6 -->
+<div class="relative rounded-xl overflow-hidden group soft-shadow cursor-pointer" onclick="openLightbox('placeholder')">
+<img alt="Gallery image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A candid, high-contrast black and white photograph of a couple dancing closely, softly blurred to convey motion and emotion. The image has a grainy, timeless, editorial magazine quality. The mood is highly romantic, intimate, and sophisticated, focusing on the connection between the subjects rather than sharp details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0w1Zw7tAQmjTzxYMCOakOgSK1Laii3NFXcVkhGQ8RF0FZW5inBghyJQ6crjMqwdYRW37npWumjxWaTvcNEOcncDVGAhbw5v8BLZpUlVqPQde4KepYNIYMPLeiI1VtuvvXIidnwh6kB4xqAoXxRoRv4NqYUjHtaYh8sFDCEcAI9l_mp6VpAmlk0lEJ_vw1pU0oqezUZUuOTQvpoBeZiitI2J4_hpoiJh90OJpoYNX5Sw3HEQWRX8BNjuspLrHdRmtOLanfNRTCqkvu"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent photo-overlay flex flex-col justify-end p-6">
+<p class="font-body-md text-surface-container-high text-sm">Emma L.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-tertiary-container text-on-primary dark:text-tertiary-fixed font-body-md text-body-md w-full mt-section-gap border-none">
+<div class="flex flex-col items-center gap-8 py-section-gap px-gutter max-w-container-max mx-auto text-center">
+<div class="font-headline-md text-headline-md text-primary-fixed">Gian &amp; Thalia</div>
+<div class="flex gap-6">
+<a class="text-on-primary-fixed-variant hover:text-white hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Contact</a>
+<a class="text-on-primary-fixed-variant hover:text-white hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-primary-fixed-variant hover:text-white hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Venue Map</a>
+<a class="text-on-primary-fixed-variant hover:text-white hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Guest FAQ</a>
+</div>
+<div class="text-on-primary-fixed-variant text-sm mt-4">© 2024 Gian &amp; Thalia. Made with love.</div>
+</div>
+</footer>
+<!-- Fullscreen Lightbox Modal -->
+<div class="fixed inset-0 z-[100] bg-primary/95 backdrop-blur-md hidden flex items-center justify-center opacity-0 transition-opacity duration-300" id="lightbox">
+<button class="absolute top-8 right-8 text-white hover:text-secondary-fixed transition-colors z-50" onclick="closeLightbox()">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<button class="absolute left-8 text-white/50 hover:text-white transition-colors z-50">
+<span class="material-symbols-outlined text-5xl">chevron_left</span>
+</button>
+<div class="max-w-5xl max-h-[870px] relative px-12 w-full">
+<img alt="Fullscreen preview" class="w-full h-full object-contain rounded-lg soft-shadow" id="lightbox-img" src=""/>
+<div class="absolute bottom-[-60px] left-0 right-0 text-center">
+<p class="font-headline-md text-white text-xl mb-1" id="lightbox-title">Photo Title</p>
+<p class="font-body-md text-primary-fixed-dim text-sm" id="lightbox-author">Shared by Guest</p>
+</div>
+</div>
+<button class="absolute right-8 text-white/50 hover:text-white transition-colors z-50">
+<span class="material-symbols-outlined text-5xl">chevron_right</span>
+</button>
+</div>
+<script>
+        // Simple Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(imgSrc) {
+            lightboxImg.src = imgSrc;
+            lightbox.classList.remove('hidden');
+            // Trigger reflow for animation
+            void lightbox.offsetWidth;
+            lightbox.classList.add('opacity-100');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('opacity-100');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        // Close on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                closeLightbox();
+            }
+        });
+
+        // Dropzone interaction
+        const dropzone = document.getElementById('dropzone');
+        
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropzone.addEventListener(eventName, highlight, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, unhighlight, false);
+        });
+
+        function highlight(e) {
+            dropzone.classList.add('border-secondary', 'bg-surface-container-low');
+        }
+
+        function unhighlight(e) {
+            dropzone.classList.remove('border-secondary', 'bg-surface-container-low');
+        }
+    </script>
+</body></html>

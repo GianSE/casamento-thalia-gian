@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gifts &amp; RSVP - Gian &amp; Thalia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#001f29",
+                      "on-error": "#ffffff",
+                      "secondary-fixed": "#d5e3ff",
+                      "primary-fixed-dim": "#afc8f0",
+                      "inverse-surface": "#2c3134",
+                      "secondary-fixed-dim": "#a7c8ff",
+                      "on-surface-variant": "#43474e",
+                      "tertiary": "#00070b",
+                      "tertiary-fixed-dim": "#76d2f6",
+                      "primary": "#000613",
+                      "surface-container-high": "#e4e9ed",
+                      "secondary": "#005eb2",
+                      "surface-bright": "#f6fafe",
+                      "on-primary-container": "#6f88ad",
+                      "on-surface": "#171c1f",
+                      "surface-container": "#eaeef2",
+                      "tertiary-fixed": "#baeaff",
+                      "on-secondary-fixed": "#001b3b",
+                      "error-container": "#ffdad6",
+                      "on-secondary-container": "#002e5d",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-container": "#2891b2",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#004788",
+                      "on-tertiary-fixed-variant": "#004d62",
+                      "primary-fixed": "#d4e3ff",
+                      "surface-container-highest": "#dfe3e7",
+                      "primary-container": "#001f3f",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#d6dade",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f0f4f8",
+                      "outline": "#74777f",
+                      "surface-tint": "#476083",
+                      "on-background": "#171c1f",
+                      "secondary-container": "#4597fe",
+                      "outline-variant": "#c4c6cf",
+                      "error": "#ba1a1a",
+                      "surface-variant": "#dfe3e7",
+                      "inverse-on-surface": "#edf1f5",
+                      "tertiary-container": "#00222d",
+                      "inverse-primary": "#afc8f0",
+                      "background": "#f6fafe",
+                      "on-primary-fixed-variant": "#2f486a",
+                      "on-primary-fixed": "#001c3a",
+                      "surface": "#f6fafe"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1200px",
+                      "section-gap": "120px",
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "unit": "8px",
+                      "section-gap-mobile": "64px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "display-hero-mobile": [
+                              "Playfair Display"
+                      ],
+                      "display-hero": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-hero-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-hero": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 31, 63, 0.08);
+        }
+
+        .input-elegant {
+            border: none;
+            border-bottom: 1px solid theme('colors.surface-variant');
+            background: transparent;
+            border-radius: 0;
+            padding-left: 0;
+            transition: all 0.3s ease;
+        }
+
+        .input-elegant:focus {
+            box-shadow: none;
+            border-bottom: 1px solid theme('colors.secondary');
+        }
+        
+        .gradient-btn {
+            background: linear-gradient(135deg, theme('colors.primary-container'), theme('colors.secondary'));
+            color: theme('colors.on-primary');
+            transition: opacity 0.3s ease;
+        }
+        
+        .gradient-btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopNavBar -->
+<header class="bg-white/70 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/20 shadow-sm transition-all duration-500 ease-in-out">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md text-primary italic" href="#">Gian &amp; Thalia</a>
+<nav class="hidden md:flex gap-8">
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors hover:opacity-80 transition-opacity duration-300" href="#">The Story</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors hover:opacity-80 transition-opacity duration-300" href="#">The Venue</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors hover:opacity-80 transition-opacity duration-300" href="#">Travel</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-secondary border-b-2 border-secondary pb-1 hover:opacity-80 transition-opacity duration-300" href="#">Registry</a>
+</nav>
+<button class="gradient-btn font-label-sm text-label-sm uppercase px-6 py-2 rounded-full hidden md:block">RSVP</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-[100px]">
+<div class="max-w-container-max mx-auto px-gutter py-section-gap">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<!-- Left Column: RSVP Form -->
+<div class="lg:col-span-5 relative z-10">
+<div class="glass-panel p-10 rounded-2xl sticky top-32">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Celebrate with Us</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Kindly respond by the first of September.</p>
+<form class="space-y-6">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-1" for="name">Guest Name(s)</label>
+<input class="input-elegant w-full font-body-md text-body-md text-primary focus:ring-0" id="name" placeholder="John &amp; Jane Doe" type="text"/>
+</div>
+<div class="pt-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-3">Will you be attending?</label>
+<div class="flex gap-4">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="text-secondary focus:ring-secondary" name="attendance" type="radio" value="yes"/>
+<span class="font-body-md text-body-md text-primary group-hover:text-secondary transition-colors">Joyfully Accept</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="text-secondary focus:ring-secondary" name="attendance" type="radio" value="no"/>
+<span class="font-body-md text-body-md text-primary group-hover:text-secondary transition-colors">Regretfully Decline</span>
+</label>
+</div>
+</div>
+<div class="pt-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-1" for="dietary">Dietary Restrictions</label>
+<input class="input-elegant w-full font-body-md text-body-md text-primary focus:ring-0" id="dietary" placeholder="e.g., Vegetarian, Peanut Allergy" type="text"/>
+</div>
+<div class="pt-6">
+<button class="w-full gradient-btn font-label-sm text-label-sm uppercase tracking-widest py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300" type="submit">
+                                    Send RSVP
+                                </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Right Column: Registry & Gifts -->
+<div class="lg:col-span-7 space-y-12">
+<div class="text-center md:text-left mb-8">
+<h1 class="font-display-hero text-display-hero text-primary mb-4">Our Registry</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Your presence at our wedding is the greatest gift of all. However, if you wish to honor us with a gift, we have curated a selection of items and experiences as we start our new life together.</p>
+</div>
+<!-- Gift Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Gift 1 -->
+<div class="glass-panel rounded-2xl overflow-hidden group cursor-pointer hover:-translate-y-1 transition-transform duration-500">
+<div class="h-48 w-full bg-surface-container relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A luxurious tropical resort at sunset, warm golden lighting, serene ocean view from a minimalist balcony, editorial travel photography style, soft blues and golds." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8PV9NaZt0zjzImDcBgRwKOOen6to3MCCI8PGYVQdMdovwRl0F8_BpGVKpjqumFKxKi-DPXIb-MYhNPPJq8HYPPSmTdbeHS103gYVAr872kGx79jGjTSYpzPlZi0u0qFa6OREr9Vto-Q0SJrGSdaaQ3OiK-x3afNGwfM79GOtrrj7jy1Bex4YFH_p_PdyuP-D-F585a_2T404zmAV_73j81WWsJq38tPJopy2kcaO_xySIJKQvcKWjBTyEo0dYXLAC_Hp1Zb0lDNZK')"></div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-2xl">Honeymoon Fund</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 h-16">Help us create unforgettable memories on our romantic getaway to the Amalfi Coast.</p>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Contribute</span>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Gift 2 -->
+<div class="glass-panel rounded-2xl overflow-hidden group cursor-pointer hover:-translate-y-1 transition-transform duration-500">
+<div class="h-48 w-full bg-surface-container relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Elegant fine dining table setting, crystal glassware, minimalist white plates with subtle silver trim, natural daylight, soft depth of field, high-end editorial home decor aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZ435WMskPe8EkI5EYNQSaJQKCiYNlPEm7PTbekTf2cy59O0w7dzQIuVFQajLkdww-lD02KW0Fs2nwZCTwPmltQcBqUfb-LwdStp-kUfd8c9IJTkxSXTzE5Dvfnrcrv5w2pMDWcnsA-9qDtde6fXnFzMvq1kDiLNhxj0p4uJbZdvtvL14JjY8f0xu8_QbdHsaAltT80s-QxZtzPe4ussXsWnSqgCuUg5kWoL63_E8Avgo8G0AMfNAIimVK6hSUDCKD_orwRftxAXhE')"></div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-2xl">Home Essentials</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 h-16">Curated pieces to complete our new home, from fine dining sets to luxurious linens.</p>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">View Registry</span>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Gift 3 -->
+<div class="glass-panel rounded-2xl overflow-hidden group cursor-pointer hover:-translate-y-1 transition-transform duration-500 md:col-span-2 flex flex-col md:flex-row">
+<div class="h-48 md:h-auto md:w-2/5 bg-surface-container relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A sophisticated espresso machine on a marble countertop, soft morning light filtering through a window, minimalist kitchen setting, dark navy and white tones, clean modern aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBiqq0UUnMPnnY9N0K2ZCP5WMKw4G77t9u52cKIbnLnAtmNZoJegABxstuW7yl-Z4VtrcdPvWmuBw8QTbHYtWLf8K2XZObObkUEgFkWd6vX5E1LjLZu6M1BNqdnRK5CAxOt5dpf7nj1ZTe8j3PZbmGmZDpv2wJXaZ0d9lF4w5g4YbXhgo1ejAeOPDjBF3yzTdMIH5D2B0zjoC3g2-xHzdAwcxVePzgD-5Qlo7N2-SUJVhS01PNdcyFcVMiUNYV7sfX-DWDyMf2p1rgH')"></div>
+</div>
+<div class="p-6 md:p-8 md:w-3/5 flex flex-col justify-center">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-2xl">Williams Sonoma</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Explore our curated collection of kitchenware and culinary essentials.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">View Details</span>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mural of Messages -->
+<div class="mt-section-gap pt-16 border-t border-surface-variant">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Mural of Messages</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Leave a note, a piece of advice, or a wish for our future together.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Message Card 1 -->
+<div class="glass-panel p-6 rounded-xl border border-white/40">
+<p class="font-headline-md text-headline-md text-primary-fixed-dim text-4xl mb-2 opacity-50">"</p>
+<p class="font-body-md text-body-md text-primary italic mb-4">Wishing you a lifetime of love and happiness. Can't wait to celebrate your special day!</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">- Aunt Sarah &amp; Uncle John</p>
+</div>
+<!-- Add Message Input -->
+<div class="glass-panel p-6 rounded-xl border border-secondary/20 bg-white/40 flex flex-col justify-center items-center text-center cursor-pointer hover:bg-white/60 transition-colors">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">edit_note</span>
+<h3 class="font-headline-md text-headline-md text-primary text-xl mb-2">Leave a Message</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Add your wish to the mural</p>
+</div>
+<!-- Message Card 2 -->
+<div class="glass-panel p-6 rounded-xl border border-white/40">
+<p class="font-headline-md text-headline-md text-primary-fixed-dim text-4xl mb-2 opacity-50">"</p>
+<p class="font-body-md text-body-md text-primary italic mb-4">So thrilled for you both! May your honeymoon be as beautiful as your love story.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">- The Millers</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary w-full mt-section-gap py-section-gap px-gutter text-center">
+<div class="max-w-container-max mx-auto flex flex-col items-center gap-8">
+<h2 class="font-headline-md text-headline-md text-primary-fixed italic">Gian &amp; Thalia</h2>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-primary-fixed-variant hover:text-white transition-colors" href="#">Contact</a>
+<a class="font-body-md text-body-md text-on-primary-fixed-variant hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-primary-fixed-variant hover:text-white transition-colors" href="#">Venue Map</a>
+<a class="font-body-md text-body-md text-on-primary-fixed-variant hover:text-white transition-colors" href="#">Guest FAQ</a>
+</div>
+<p class="font-body-md text-body-md text-on-primary-fixed-variant opacity-90 hover:opacity-100 transition-opacity">© 2024 Gian &amp; Thalia. Made with love.</p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gian &amp; Thalia - Lista de Presentes &amp; RSVP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c4c6cf",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#afc8f0",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#afc8f0",
+                        "tertiary-fixed": "#baeaff",
+                        "surface-container-highest": "#dfe3e7",
+                        "on-tertiary-fixed": "#001f29",
+                        "primary-container": "#001f3f",
+                        "surface-variant": "#dfe3e7",
+                        "surface-container": "#eaeef2",
+                        "surface-tint": "#476083",
+                        "on-tertiary-fixed-variant": "#004d62",
+                        "surface-container-high": "#e4e9ed",
+                        "on-secondary-fixed": "#001b3b",
+                        "tertiary": "#00070b",
+                        "tertiary-container": "#00222d",
+                        "on-secondary-container": "#002e5d",
+                        "on-surface": "#171c1f",
+                        "primary": "#000613",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#d5e3ff",
+                        "primary-fixed": "#d4e3ff",
+                        "background": "#f6fafe",
+                        "surface-container-low": "#f0f4f8",
+                        "surface-dim": "#d6dade",
+                        "on-background": "#171c1f",
+                        "secondary-container": "#4597fe",
+                        "on-primary-fixed-variant": "#2f486a",
+                        "secondary": "#005eb2",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f6fafe",
+                        "on-surface-variant": "#43474e",
+                        "inverse-on-surface": "#edf1f5",
+                        "error": "#ba1a1a",
+                        "outline": "#74777f",
+                        "on-tertiary-container": "#2891b2",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#76d2f6",
+                        "secondary-fixed-dim": "#a7c8ff",
+                        "on-secondary-fixed-variant": "#004788",
+                        "on-primary-container": "#6f88ad",
+                        "inverse-surface": "#2c3134",
+                        "surface": "#f6fafe",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#001c3a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "section-gap-mobile": "64px",
+                        "unit": "8px",
+                        "container-max": "1200px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Playfair Display", "serif"],
+                        "display-hero": ["Playfair Display", "serif"],
+                        "headline-lg": ["Playfair Display", "serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "display-hero-mobile": ["Playfair Display", "serif"],
+                        "headline-lg-mobile": ["Playfair Display", "serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "label-sm": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "display-hero": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-hero-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { scroll-behavior: smooth; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 31, 63, 0.08);
+        }
+        .input-underline {
+            border: none;
+            border-bottom: 1px solid #c4c6cf;
+            background: transparent;
+            border-radius: 0;
+        }
+        .input-underline:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom-color: #005eb2;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #001f3f, #005eb2);
+            color: #ffffff;
+        }
+        .btn-ghost {
+            border: 1px solid #005eb2;
+            color: #005eb2;
+            background: transparent;
+        }
+        .btn-ghost:hover {
+            background: rgba(0, 94, 178, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased min-h-screen relative overflow-x-hidden">
+<!-- TopAppBar (Web) -->
+<header class="hidden md:flex bg-surface/70 dark:bg-surface-container-highest/70 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline-variant/20 dark:border-outline/10">
+<div class="flex justify-between items-center px-margin-mobile md:px-gutter w-full max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity">menu</span>
+<span class="font-headline-md text-headline-md italic tracking-wide text-primary">Gian &amp; Thalia</span>
+</div>
+<nav class="flex gap-8">
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors" href="#">Our Story</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors" href="#">The Venue</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold border-b-2 border-secondary pb-1" href="#">Gifts</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors" href="#">RSVP</a>
+</nav>
+<button class="font-label-sm text-label-sm uppercase tracking-widest text-primary hover:opacity-80 transition-opacity">RSVP</button>
+</div>
+</header>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden bg-surface/80 dark:bg-surface-container/80 backdrop-blur-lg fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant/30 dark:border-outline/20 shadow-[0_-10px_30px_rgba(0,31,63,0.05)]">
+<div class="flex justify-around items-center h-16 pb-safe w-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">auto_stories</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[10px]">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">photo_library</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[10px]">Photos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">featured_seasonal_and_gifts</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[10px]">Gifts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">favorite</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[10px]">RSVP</span>
+</a>
+</div>
+</nav>
+<main class="pt-24 pb-32 md:pt-32 w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<!-- Hero Section -->
+<section class="text-center mb-section-gap-mobile md:mb-section-gap">
+<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-primary mb-6">Lista de Presentes</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Se quiser nos presentear, separamos algumas opções para nos ajudar a construir nosso lar e aproveitar nossa lua de mel.</p>
+</section>
+<!-- Gifts Bento Grid -->
+<section class="mb-section-gap-mobile md:mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Gift Item 1: Honeymoon -->
+<div class="glass-panel rounded-xl p-8 md:col-span-8 flex flex-col justify-between group overflow-hidden relative">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500" data-alt="A luxurious tropical beach honeymoon destination with crystal clear water, white sand, and a soft sunset glow. High-end editorial style, modern luxury, deep navy and pristine white accents. Romantic and serene mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1GSY2zpKoXkT2U8VLC05hNk6No7dGX-VYCB7HXkIEgA94yuiATLRmD5CgSLTbOCs8aU7z7fuTtfdgxyzSEa6eNd0QiZaVEop3IK3sl2YDXj_stCgzjxvLRGMVRVerlazKvteSWBIi5I2IsVug5WEB30AiIchuKCJPnQ-NJ11-B2jrykpbEv4LIs_uwDgMukUq-k_5hrMfubSlCtC7mFAgV9RYphoUrc6Li_iW19xuT6h8E4f6rbal5SmV2zrHZ0zCfwPZEwIXK8tZ"/>
+</div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">flight_takeoff</span>
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Cotas Lua de Mel</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 max-w-md">Nos ajude a realizar a viagem dos nossos sonhos pelas praias do Mediterrâneo.</p>
+</div>
+<div class="relative z-10 flex items-center justify-between mt-8">
+<span class="font-body-lg text-body-lg font-semibold text-primary">A partir de R$ 100</span>
+<button class="btn-gradient px-6 py-3 rounded-full font-label-sm text-label-sm uppercase tracking-widest hover:shadow-lg transition-shadow">Contribuir</button>
+</div>
+</div>
+<!-- Gift Item 2: Home Items -->
+<div class="glass-panel rounded-xl p-8 md:col-span-4 flex flex-col justify-between group">
+<div>
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">home_repair_service</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Para a Casa</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Itens para montar nosso novo cantinho.</p>
+</div>
+<div class="mt-8">
+<button class="btn-ghost w-full py-3 rounded-full font-label-sm text-label-sm uppercase tracking-widest">Ver Lista</button>
+</div>
+</div>
+<!-- Gift Item 3: Experience -->
+<div class="glass-panel rounded-xl p-8 md:col-span-6 flex flex-col justify-between group">
+<div class="flex items-start gap-4">
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="An elegant, romantic dinner setup for two at a fine dining restaurant with candlelight, crystal glasses, and soft focused background. High-end modern editorial style, sophisticated mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN5tULasXK6PvFeKT59kpJeoA1V17dsIsC4aCDI86dvNRIiwj_ZnCLdcGS62sJkjF7ej1t7ZJ9kiq-ovUqTxe_i1CHZjYnfoiXIWr66KStPeFf4pl2FrY0XGA8Pik5qvJG1s4nMoXv5njKYS3BSUVGHyq-s9_0ZR73tYr15kC8oqs_ys_brs_-dgaYLICBPLS4bPbUpf7oW99-zonJhOscKLAo4RXjg80KLHUNmK1fJdlsPU-dKmfQiueLgBpkhrFSIusyfraIdFqD"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Jantar Romântico</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">Um jantar especial durante nossa viagem.</p>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">R$ 500</span>
+</div>
+</div>
+<div class="mt-6 text-right">
+<button class="btn-ghost px-6 py-2 rounded-full font-label-sm text-label-sm uppercase tracking-widest">Reservar</button>
+</div>
+</div>
+<!-- Gift Item 4: General Fund -->
+<div class="glass-panel rounded-xl p-8 md:col-span-6 flex flex-col justify-between group bg-surface-container-low/50">
+<div class="flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">pin</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">PIX Direto</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Prefere nos presentear via PIX? Use a chave abaixo.</p>
+<div class="bg-surface p-4 rounded-lg border border-outline-variant/30 flex items-center gap-4 w-full justify-between">
+<span class="font-body-md text-body-md text-on-surface truncate">casamento@gianethalia.com</span>
+<button class="text-secondary hover:text-primary transition-colors" title="Copiar"><span class="material-symbols-outlined">content_copy</span></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- RSVP Form Section -->
+<section class="mb-section-gap-mobile md:mb-section-gap relative py-12">
+<!-- Decorative background element -->
+<div class="absolute inset-0 -z-10 bg-secondary/5 transform -skew-y-3 rounded-[3rem]"></div>
+<div class="max-w-3xl mx-auto glass-panel rounded-2xl p-8 md:p-12 relative overflow-hidden">
+<div id="rsvp-form-container">
+<div class="text-center mb-10">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">Você vem celebrar com a gente?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Por favor, confirme sua presença até o dia 15 de Novembro.</p>
+</div>
+<form class="space-y-8" id="rsvp-form">
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-2" for="name">Nome Completo</label>
+<input class="input-underline w-full py-2 font-body-lg text-body-lg text-primary placeholder:text-outline-variant transition-colors" id="name" name="name" placeholder="Seu nome" required="" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-4">Confirmação</label>
+<div class="flex gap-4">
+<label class="flex-1 cursor-pointer">
+<input class="peer sr-only" name="attending" required="" type="radio" value="yes"/>
+<div class="text-center py-3 border border-outline-variant rounded-lg peer-checked:border-secondary peer-checked:bg-secondary/10 peer-checked:text-secondary transition-all font-body-md text-body-md text-on-surface-variant">
+                                            Sim, estarei lá!
+                                        </div>
+</label>
+<label class="flex-1 cursor-pointer">
+<input class="peer sr-only" name="attending" type="radio" value="no"/>
+<div class="text-center py-3 border border-outline-variant rounded-lg peer-checked:border-error peer-checked:bg-error/10 peer-checked:text-error transition-all font-body-md text-body-md text-on-surface-variant">
+                                            Não poderei
+                                        </div>
+</label>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-2" for="guests">Acompanhantes</label>
+<select class="input-underline w-full py-2 font-body-lg text-body-lg text-primary cursor-pointer" id="guests" name="guests">
+<option value="0">Vou sozinho(a)</option>
+<option value="1">+1 Acompanhante</option>
+<option value="2">+2 Acompanhantes</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-2" for="diet">Restrições Alimentares (Opcional)</label>
+<input class="input-underline w-full py-2 font-body-lg text-body-lg text-primary placeholder:text-outline-variant transition-colors" id="diet" name="diet" placeholder="Ex: Vegetariano, alergia a glúten..." type="text"/>
+</div>
+<div class="pt-6 text-center">
+<button class="btn-gradient px-12 py-4 rounded-full font-label-sm text-label-sm uppercase tracking-widest hover:shadow-xl transition-all w-full md:w-auto" type="submit">Confirmar RSVP</button>
+</div>
+</form>
+</div>
+<!-- Success State Overlay (Hidden by default) -->
+<div class="hidden absolute inset-0 bg-surface/95 backdrop-blur-md flex-col items-center justify-center text-center p-8 z-20" id="rsvp-success">
+<span class="material-symbols-outlined text-secondary text-6xl mb-6" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">RSVP Confirmado!</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mx-auto">Mal podemos esperar para celebrar este momento tão especial com você.</p>
+</div>
+</div>
+</section>
+<!-- Message Mural (Scrapbook Style) -->
+<section class="mb-section-gap-mobile md:mb-section-gap">
+<div class="text-center mb-12">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Mural de Mensagens</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Deixe seu carinho para nós.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto relative">
+<!-- Add Message Button (Floating) -->
+<button class="absolute -top-16 right-0 btn-ghost w-12 h-12 rounded-full flex items-center justify-center hover:bg-secondary/10 transition-colors z-10" title="Deixar mensagem">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<!-- Message Card 1 -->
+<div class="bg-surface p-6 rounded-lg shadow-sm border border-outline-variant/20 transform rotate-1 hover:rotate-0 transition-transform duration-300 relative">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-sm">push_pin</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic mb-4 mt-2">"Felicidades ao casal! Que essa nova etapa seja repleta de amor, paciência e muitas alegrias. Mal vejo a hora de celebrar com vocês!"</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block text-right">- Tia Maria</span>
+</div>
+<!-- Message Card 2 -->
+<div class="bg-surface p-6 rounded-lg shadow-sm border border-outline-variant/20 transform -rotate-2 hover:rotate-0 transition-transform duration-300 relative md:mt-8">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-sm">push_pin</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic mb-4 mt-2">"Gian e Thalia, vocês foram feitos um para o outro. Que a lua de mel seja inesquecível e o casamento duradouro. Amo vocês!"</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block text-right">- Carlos e Ana</span>
+</div>
+<!-- Message Card 3 -->
+<div class="bg-surface p-6 rounded-lg shadow-sm border border-outline-variant/20 transform rotate-2 hover:rotate-0 transition-transform duration-300 relative">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-sm">push_pin</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic mb-4 mt-2">"Contando os dias para essa festa! Desejo toda a felicidade do mundo para essa nova família que se forma."</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block text-right">- Pedro H.</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background dark:bg-surface-dim w-full py-section-gap-mobile md:py-section-gap border-t border-outline-variant/20">
+<div class="flex flex-col items-center gap-unit max-w-container-max mx-auto px-margin-mobile text-center">
+<span class="font-headline-md text-headline-md text-primary mb-4">Gian &amp; Thalia</span>
+<div class="flex flex-wrap justify-center gap-6 mb-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary transition-all" href="#">Our Story</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary transition-all" href="#">The Venue</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary transition-all" href="#">Registry</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary transition-all" href="#">Contact</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-70">Gian &amp; Thalia — 2024</p>
+</div>
+</footer>
+<script>
+        // Simple RSVP Form handling for demonstration
+        document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const name = document.getElementById('name').value;
+            const attending = document.querySelector('input[name="attending"]:checked');
+
+            if (name && attending) {
+                // Hide form, show success state
+                document.getElementById('rsvp-form-container').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('rsvp-form-container').classList.add('hidden');
+                    const successOverlay = document.getElementById('rsvp-success');
+                    successOverlay.classList.remove('hidden');
+                    successOverlay.classList.add('flex');
+                    
+                    // Simple animation effect
+                    successOverlay.style.opacity = '0';
+                    successOverlay.style.transition = 'opacity 0.5s ease';
+                    setTimeout(() => successOverlay.style.opacity = '1', 50);
+                }, 300);
+            }
+        });
+    </script>
+</body></html>

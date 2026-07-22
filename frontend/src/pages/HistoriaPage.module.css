@@ -1,0 +1,147 @@
+.page {
+  padding-top: var(--space-8);
+}
+
+.section {
+  padding-bottom: var(--section-gap);
+}
+
+/* ---------- Timeline vertical ---------- */
+.timeline {
+  position: relative;
+  max-width: 780px;
+  margin-inline: auto;
+  padding-left: var(--space-6);
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(var(--sky-200), var(--surface-container));
+}
+
+.tItem {
+  position: relative;
+  padding-bottom: var(--space-7);
+}
+.tItem:last-child {
+  padding-bottom: 0;
+}
+
+.tDot {
+  position: absolute;
+  left: calc(-1 * var(--space-6));
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  background: var(--white);
+  border: 4px solid var(--accent);
+  box-shadow: 0 0 0 4px rgba(0, 116, 217, 0.12);
+}
+
+.tCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg) var(--radius) var(--radius-lg) var(--radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+.tMedia {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--surface-alt);
+}
+.tMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+}
+.tTitle {
+  font-family: var(--font-serif);
+  font-size: var(--fs-xl);
+}
+.tBody p {
+  color: var(--text-soft);
+  font-size: var(--fs-sm);
+}
+
+/* ---------- O Grande Dia ---------- */
+.bigDay {
+  padding-block: var(--section-gap);
+  background: var(--bg-alt);
+}
+
+.dayGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-5);
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.dayCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  text-align: center;
+  padding: var(--space-7) var(--space-5);
+  background: var(--card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.dayIcon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: var(--gradient-primary);
+  color: var(--white);
+  margin-bottom: var(--space-2);
+}
+.dayTitle {
+  font-family: var(--font-serif);
+  font-size: var(--fs-xl);
+}
+.daySubtitle {
+  font-weight: var(--fw-semibold);
+  color: var(--navy-800);
+}
+.dayInfo {
+  color: var(--text-soft);
+  font-size: var(--fs-sm);
+}
+.dayAddress {
+  color: var(--text-faint);
+  font-size: var(--fs-sm);
+}
+.dayMap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-full);
+  color: var(--accent-strong);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  transition: background var(--dur-fast);
+}
+.dayMap:hover {
+  background: rgba(0, 116, 217, 0.06);
+}

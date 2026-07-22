@@ -1,0 +1,63 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-full);
+  transition: transform var(--dur-fast), box-shadow var(--dur-fast),
+    background var(--dur-fast), border-color var(--dur-fast), color var(--dur-fast);
+  white-space: nowrap;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.md {
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--fs-sm);
+}
+.lg {
+  padding: var(--space-4) var(--space-6);
+  font-size: var(--fs-base);
+}
+
+/* Primário — gradiente navy→royal, texto claro */
+.primary {
+  background: var(--gradient-primary);
+  color: var(--white);
+  box-shadow: var(--shadow-primary);
+}
+.primary:hover {
+  box-shadow: 0 14px 34px rgba(0, 116, 217, 0.38);
+}
+
+/* Secundário — navy sólido */
+.secondary {
+  background: var(--navy-800);
+  color: var(--on-dark);
+  box-shadow: var(--shadow-md);
+}
+.secondary:hover {
+  background: var(--navy-700);
+}
+
+/* Ghost — contorno royal, rótulo em caixa alta */
+.ghost {
+  background: transparent;
+  color: var(--accent-strong);
+  border: 1px solid var(--accent);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  font-size: var(--fs-xs);
+}
+.ghost:hover {
+  background: rgba(0, 116, 217, 0.06);
+}

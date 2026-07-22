@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Photos - Gian &amp; Thalia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline-variant": "#c4c6cf",
+                      "on-tertiary": "#ffffff",
+                      "inverse-primary": "#afc8f0",
+                      "on-error-container": "#93000a",
+                      "error-container": "#ffdad6",
+                      "primary-fixed-dim": "#afc8f0",
+                      "tertiary-fixed": "#baeaff",
+                      "surface-container-highest": "#dfe3e7",
+                      "on-tertiary-fixed": "#001f29",
+                      "primary-container": "#001f3f",
+                      "surface-variant": "#dfe3e7",
+                      "surface-container": "#eaeef2",
+                      "surface-tint": "#476083",
+                      "on-tertiary-fixed-variant": "#004d62",
+                      "surface-container-high": "#e4e9ed",
+                      "on-secondary-fixed": "#001b3b",
+                      "tertiary": "#00070b",
+                      "tertiary-container": "#00222d",
+                      "on-secondary-container": "#002e5d",
+                      "on-surface": "#171c1f",
+                      "primary": "#000613",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed": "#d5e3ff",
+                      "primary-fixed": "#d4e3ff",
+                      "background": "#f6fafe",
+                      "surface-container-low": "#f0f4f8",
+                      "surface-dim": "#d6dade",
+                      "on-background": "#171c1f",
+                      "secondary-container": "#4597fe",
+                      "on-primary-fixed-variant": "#2f486a",
+                      "secondary": "#005eb2",
+                      "on-primary": "#ffffff",
+                      "surface-bright": "#f6fafe",
+                      "on-surface-variant": "#43474e",
+                      "inverse-on-surface": "#edf1f5",
+                      "error": "#ba1a1a",
+                      "outline": "#74777f",
+                      "on-tertiary-container": "#2891b2",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed-dim": "#76d2f6",
+                      "secondary-fixed-dim": "#a7c8ff",
+                      "on-secondary-fixed-variant": "#004788",
+                      "on-primary-container": "#6f88ad",
+                      "inverse-surface": "#2c3134",
+                      "surface": "#f6fafe",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed": "#001c3a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "120px",
+                      "section-gap-mobile": "64px",
+                      "unit": "8px",
+                      "container-max": "1200px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "display-hero": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-hero-mobile": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-hero": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-hero-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .masonry {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 640px) {
+            .masonry { column-count: 2; }
+        }
+        @media (min-width: 1024px) {
+            .masonry { column-count: 3; }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+        .upload-gradient {
+            background: linear-gradient(135deg, #001f3f 0%, #005eb2 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar (Hidden on mobile, visible on md+) -->
+<header class="hidden md:flex justify-between items-center px-gutter w-full max-w-container-max mx-auto h-20 bg-surface/70 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline-variant/20">
+<div class="flex items-center">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+<div class="font-headline-md text-headline-md italic tracking-wide text-primary">Gian &amp; Thalia</div>
+<div class="flex items-center gap-6">
+<nav class="flex gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Home</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">History</a>
+<a class="font-label-sm text-label-sm text-secondary font-semibold border-b border-secondary pb-1" href="#">Photos</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Gifts</a>
+</nav>
+<button class="font-label-sm text-label-sm text-on-primary bg-primary px-4 py-2 rounded-full hover:opacity-80 transition-opacity">RSVP</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-20 pb-24 md:pb-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<section class="mt-8 md:mt-16 text-center max-w-2xl mx-auto mb-16">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-4">Compartilhe seus momentos</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Ajude-nos a registrar cada sorriso, cada brinde e cada passo de dança. Suas fotos podem se tornar parte da nossa história.</p>
+</section>
+<!-- Upload Section -->
+<section class="mb-section-gap-mobile md:mb-section-gap">
+<div class="bg-surface/80 backdrop-blur-lg rounded-xl border border-outline-variant/30 shadow-[0_20px_40px_rgba(0,31,63,0.05)] p-6 md:p-10 flex flex-col items-center justify-center text-center">
+<div class="w-20 h-20 bg-secondary-container/20 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 0;">photo_camera</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Envie suas fotos</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-md">Arraste as fotos para cá ou use os botões abaixo para selecionar do seu dispositivo.</p>
+<div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+<button class="upload-gradient text-on-primary font-label-sm text-label-sm px-8 py-4 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-[0_10px_20px_rgba(0,94,178,0.2)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">camera_alt</span>
+                        TIRAR UMA FOTO
+                    </button>
+<button class="bg-transparent border border-secondary text-secondary font-label-sm text-label-sm px-8 py-4 rounded-full flex items-center justify-center gap-2 hover:bg-secondary/5 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">image</span>
+                        ESCOLHER DA GALERIA
+                    </button>
+</div>
+</div>
+<!-- Upload Preview Grid -->
+<div class="mt-8">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-4">Enviando (3)</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+<!-- Item 1: Uploading -->
+<div class="relative aspect-square rounded-lg overflow-hidden border border-outline-variant/20 bg-surface-container">
+<img class="object-cover w-full h-full opacity-60 filter blur-sm" data-alt="A close-up shot of a pair of elegant crystal champagne glasses clinking together during a formal wedding toast. The background is softly blurred with warm bokeh lights, suggesting an evening reception in a luxurious setting. The lighting is bright and modern, enhancing the celebratory mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqio5x6mQenlX3F5YqzwPYzhea6NpciysdfM8aJfVBtXAY_kDM5hvUeC7ArFjCOpKnOTwRWo3N1o81KNebMbGFjYqjG6uttTUwcjdjuUEoaVxDEQpjPjmlb1LOwzH4QjrCafCMsmVcUE0PT_YbsRZXAklZDuDM-DM6mSGfpOqE7--GHYrpmcVDZWSaPwOG77bpY3H8S4Q05P_SDV55v7i3qELBZDJ7MB8nK5cCdkdKyZbh-0pt7VseSSa9BWwCTAQGPxNgY86yNwnM"/>
+<div class="absolute inset-0 flex flex-col items-center justify-center p-4 bg-surface/40">
+<span class="material-symbols-outlined text-secondary mb-2 animate-spin">sync</span>
+<div class="w-full bg-outline-variant/30 rounded-full h-1.5">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+</div>
+<!-- Item 2: Uploading -->
+<div class="relative aspect-square rounded-lg overflow-hidden border border-outline-variant/20 bg-surface-container">
+<img class="object-cover w-full h-full opacity-60 filter blur-sm" data-alt="A candid photo of the bride and groom laughing together on the dance floor, surrounded by guests. The image captures motion and joy, with elegant ambient lighting from chandeliers above. The setting is a grand ballroom with modern minimalist decor accents. A high-end editorial photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpiaiIuFk_iOwJP_ZEDtO0sUPeCnOKorigcvlLK6U0cbWs4uyuwETh0vceA-R4S1rFcb3g5qq6xpvZzT0gE2reYn4OGaea4o3MiJWVSvzVHrvHbUBGYTTufr_32Te23rUatWcxBj5Xt5aWKQVDngqHqb41VmDS0_QBPHW9zIb_3ZnuF-I4WVlaYC6cmIZ-qCzZaO3O2eTFy3XCuk3gv3jcOagPQUSGV-c9LZjCtW80xglQ5j7rZYGD2_XDdaZk6uFS7qnJvJHjyYjM"/>
+<div class="absolute inset-0 flex flex-col items-center justify-center p-4 bg-surface/40">
+<span class="material-symbols-outlined text-secondary mb-2 animate-spin">sync</span>
+<div class="w-full bg-outline-variant/30 rounded-full h-1.5">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 80%"></div>
+</div>
+</div>
+</div>
+<!-- Item 3: Done -->
+<div class="relative aspect-square rounded-lg overflow-hidden border border-outline-variant/20 bg-surface-container">
+<img class="object-cover w-full h-full" data-alt="A beautifully styled detail shot of the wedding invitation suite resting on a textured linen cloth, adorned with a few loose white floral petals. The color palette features deep navy and pristine white, perfectly aligning with the modern editorial aesthetic. Soft, natural daylight illuminates the scene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf-Mc1DKFiCyc4fqYIdf2zMDCzLrW_IIlBisSrK4nYttm-OuBj3R7VUaGi9mBYwCn15gXJMGfCDdGI0oJyG_-7-kL3I7Pehxg3TE2cGcTRYHrt8pp0-L3qOlPzGeshxmIkPhMq7CfUlx2BwprcXdLjYWpvuLRt8PaZTWT6pQz7WiSFaCa6XZT8wFVbdHSN5nQuM3YjKuj4CuxY2Y3j2RG0xIXplSW6c1OmPhD4uTE_LN1T1ycZlHsnxEcQp3CFj1e1BFD_nFo7-LrE"/>
+<div class="absolute inset-0 flex items-center justify-center bg-primary/20 opacity-0 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-primary bg-secondary/80 rounded-full p-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section>
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Galeria de Convidados</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Momentos capturados por quem amamos.</p>
+</div>
+<button class="hidden md:flex font-label-sm text-label-sm text-secondary items-center gap-1 hover:opacity-80">
+                    Ver todas <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="masonry">
+<!-- Gallery Item 1 -->
+<div class="masonry-item relative group rounded-xl overflow-hidden shadow-[0_10px_20px_rgba(0,31,63,0.05)] border border-outline-variant/10">
+<img class="w-full h-auto object-cover" data-alt="A vertical portrait of a well-dressed guest couple standing by a modern floral arch arrangement. The lighting is soft and flattering, creating a high-fashion, editorial look. The background is slightly out of focus, emphasizing the subjects and their elegant attire in the modern, light-filled venue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJco08vu7bYUQmp4KcERgR9GzdOWlUTI1h7lz32Q1yUXlr7ffGXsLzPT-e1tGNo5UXfY6c03d61ypkrednvrHusCXBnKg6x4cbl9jgdQr-SddhGNjdqnOaD8TMSPCvaS71dGBxuKXDIkgaXakNmzPf9_g6s-Uc2J-nZT05T4CQ_uKef41mFDchlgl-5n0BfNqL2tI0TTmJjR4MjBecRWdGxe0JAJssRd1fFXAjDwvP4FSF_S8OdDMW1ET5rRGO4SQ4y_jpcCbQCeoB"/>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="font-label-sm text-label-sm text-on-primary">Enviado por Marina Silva</p>
+</div>
+</div>
+<!-- Gallery Item 2 -->
+<div class="masonry-item relative group rounded-xl overflow-hidden shadow-[0_10px_20px_rgba(0,31,63,0.05)] border border-outline-variant/10">
+<img class="w-full h-auto object-cover" data-alt="A wide, horizontal shot showing the beautifully set reception tables from a slightly elevated angle. Minimalist centerpieces featuring white blooms and navy accents sit on pristine white tablecloths. The room is bathed in warm, inviting light, reflecting the sophisticated, modern editorial brand aesthetic perfectly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-QW0HOycux-YSjJCXjlY7FXG-Th03h19Dpa_F5Syy4_ZLpAkVfYq46UXrK2irqjZNFnN3zaZEZCf-5vWSOtfXbDHmXLK8lAFsiWG5xvQeHlRWqUuG8ZBnY0czpkCdFgUkO0_tWJL-d53GEAQgP6LClB-VmsWCdrm5g552a8QBgbog-_KUJLMS7nEsaDxcvOZe1GTBtdINMvC9xPqz9K7fenI43bGd8S-jHWpk6OyM23jzoKGABheK62weMWzG0qkZIMXd20Ro2qMz"/>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="font-label-sm text-label-sm text-on-primary">Enviado por João Pedro</p>
+</div>
+</div>
+<!-- Gallery Item 3 -->
+<div class="masonry-item relative group rounded-xl overflow-hidden shadow-[0_10px_20px_rgba(0,31,63,0.05)] border border-outline-variant/10">
+<img class="w-full h-auto object-cover" data-alt="An artistic black and white photograph focusing on the hands of the bride and groom as they exchange rings during the ceremony. The image is rich in contrast and texture, embodying an intimate, timeless, and high-end editorial feel with a focus on emotional connection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZWPwnGeMdKJEdaW11F-p9UFi4PyC93FGGj6xGORhk_KF6F56Cct4n2a8F_bBpwtEjpjB0H071eraU4YdmbJT1POZik_3QgBf1tgcKnF42A52meT4I2hI97hzUJzGuBHpMibp2bXMAvW93_Ke6t4yM9-UxsnxqBFGdUhkiSO-wzXO0Y8vsTd8VGwSW52FNnBsd4ZbjtXqEUEZ1aOpEGNfHI8CiLNOPTq4Z8qtWwVWFbqdU2kH2xaQ_PO9p_5tQ1eiSHZtn4eXhDTIG"/>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="font-label-sm text-label-sm text-on-primary">Enviado por Tia Lúcia</p>
+</div>
+</div>
+<!-- Gallery Item 4 -->
+<div class="masonry-item relative group rounded-xl overflow-hidden shadow-[0_10px_20px_rgba(0,31,63,0.05)] border border-outline-variant/10">
+<img class="w-full h-auto object-cover" data-alt="A joyful group selfie taken by guests near the venue's entrance, capturing a mix of laughter and excitement. The modern architecture of the venue serves as a sleek backdrop, with ample natural light ensuring the image feels bright, airy, and celebratory in a modern context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAPjc1OTnFF1SgNNI7rBds2SLzXQFrse1vYLc-gBRPTrznkeLxkeY3Y57BBEHeUZCuNqRtfNIpXiaHQivbLOoYv-o8Dw_qYW9uECKFuh-oW-V-iXQiA8eArJvqL9GhBabIXFl6ePbgVRMg2WFTXWq9qNKC31aK-yNhz_pzv3sE6t1jKb-buwJfQtPqQ2BKUT-mqp02S4mucsgWD72sdYPnI4fp-cJYSIUJOjVP9L1FF_Cl1lxnbWrJWTidPK3uBYN2bjONlIi5rZaa"/>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="font-label-sm text-label-sm text-on-primary">Enviado por Carlos T.</p>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-center md:hidden">
+<button class="font-label-sm text-label-sm border border-outline text-on-surface-variant px-6 py-3 rounded-full hover:bg-surface-container transition-colors">Carregar mais</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Visible on mobile, hidden on md+) -->
+<nav class="md:hidden bg-surface/80 dark:bg-surface-container/80 backdrop-blur-lg fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant/30 dark:border-outline/20 shadow-[0_-10px_30px_rgba(0,31,63,0.05)] flex justify-around items-center h-16 pb-safe w-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 dark:text-on-surface-variant/60 hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl mb-1" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[9px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 dark:text-on-surface-variant/60 hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl mb-1" style="font-variation-settings: 'FILL' 0;">auto_stories</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[9px]">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed scale-110 transition-transform active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined text-2xl mb-1" style="font-variation-settings: 'FILL' 1;">photo_library</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[9px]">Photos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 dark:text-on-surface-variant/60 hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl mb-1" style="font-variation-settings: 'FILL' 0;">featured_seasonal_and_gifts</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[9px]">Gifts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 dark:text-on-surface-variant/60 hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl mb-1" style="font-variation-settings: 'FILL' 0;">favorite</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[9px]">RSVP</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-section-gap-mobile md:py-section-gap border-t border-outline-variant/20 bg-background dark:bg-surface-dim mt-auto">
+<div class="flex flex-col items-center gap-unit max-w-container-max mx-auto px-margin-mobile text-center">
+<div class="font-headline-md text-headline-md text-primary mb-4">Gian &amp; Thalia</div>
+<nav class="flex flex-wrap justify-center gap-4 md:gap-8 mb-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary transition-all" href="#">Our Story</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary transition-all" href="#">The Venue</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary transition-all" href="#">Registry</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant opacity-70 hover:opacity-100 hover:text-secondary transition-all" href="#">Contact</a>
+</nav>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-70 text-sm">Gian &amp; Thalia — 2024</p>
+</div>
+</footer>
+</body></html>

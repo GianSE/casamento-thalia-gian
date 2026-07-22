@@ -1,0 +1,5 @@
+# Copie para backend/.dev.vars (não versionado) para rodar o Worker local.
+JWT_SECRET=algum-segredo-de-dev
+APP_ENV=development
+# Necessário para o upload de fotos funcionar em dev:
+CLOUDINARY_API_SECRET=seu-cloudinary-api-secret

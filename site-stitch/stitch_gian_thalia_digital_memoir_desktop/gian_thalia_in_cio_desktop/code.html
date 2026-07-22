@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gian &amp; Thalia - Wedding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#001f29",
+                      "on-error": "#ffffff",
+                      "secondary-fixed": "#d5e3ff",
+                      "primary-fixed-dim": "#afc8f0",
+                      "inverse-surface": "#2c3134",
+                      "secondary-fixed-dim": "#a7c8ff",
+                      "on-surface-variant": "#43474e",
+                      "tertiary": "#00070b",
+                      "tertiary-fixed-dim": "#76d2f6",
+                      "primary": "#000613",
+                      "surface-container-high": "#e4e9ed",
+                      "secondary": "#005eb2",
+                      "surface-bright": "#f6fafe",
+                      "on-primary-container": "#6f88ad",
+                      "on-surface": "#171c1f",
+                      "surface-container": "#eaeef2",
+                      "tertiary-fixed": "#baeaff",
+                      "on-secondary-fixed": "#001b3b",
+                      "error-container": "#ffdad6",
+                      "on-secondary-container": "#002e5d",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-container": "#2891b2",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#004788",
+                      "on-tertiary-fixed-variant": "#004d62",
+                      "primary-fixed": "#d4e3ff",
+                      "surface-container-highest": "#dfe3e7",
+                      "primary-container": "#001f3f",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#d6dade",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f0f4f8",
+                      "outline": "#74777f",
+                      "surface-tint": "#476083",
+                      "on-background": "#171c1f",
+                      "secondary-container": "#4597fe",
+                      "outline-variant": "#c4c6cf",
+                      "error": "#ba1a1a",
+                      "surface-variant": "#dfe3e7",
+                      "inverse-on-surface": "#edf1f5",
+                      "tertiary-container": "#00222d",
+                      "inverse-primary": "#afc8f0",
+                      "background": "#f6fafe",
+                      "on-primary-fixed-variant": "#2f486a",
+                      "on-primary-fixed": "#001c3a",
+                      "surface": "#f6fafe"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1200px",
+                      "section-gap": "120px",
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "unit": "8px",
+                      "section-gap-mobile": "64px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Playfair Display"],
+                      "headline-md": ["Playfair Display"],
+                      "body-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "display-hero-mobile": ["Playfair Display"],
+                      "display-hero": ["Playfair Display"]
+              },
+              "fontSize": {
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "display-hero-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "display-hero": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .soft-shadow {
+            box-shadow: 0 20px 40px rgba(0, 31, 63, 0.08);
+        }
+        .deep-to-royal {
+            background: linear-gradient(135deg, #001f3f, #005eb2);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased font-body-md overflow-x-hidden">
+<!-- Top Navigation (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-sm transition-all duration-500 ease-in-out">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md text-primary italic hover:opacity-80 transition-opacity duration-300" href="#">Gian &amp; Thalia</a>
+<!-- Desktop Nav -->
+<ul class="hidden md:flex items-center gap-8 font-body-md text-body-md uppercase tracking-widest">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#story">The Story</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#venue">The Venue</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#travel">Travel</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#registry">Registry</a></li>
+</ul>
+<a class="hidden md:inline-block px-6 py-3 bg-primary text-on-primary font-label-sm text-label-sm rounded-full uppercase tracking-widest hover:opacity-90 transition-opacity duration-300" href="#rsvp">RSVP</a>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-[32px]">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
+<!-- Animated Shader Background -->
+<div class="absolute inset-0 z-0 opacity-80 mix-blend-multiply">
+
+</div>
+<!-- Content -->
+<div class="relative z-10 text-center max-w-container-max mx-auto px-gutter w-full mt-12 md:mt-0">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-6 uppercase tracking-[0.2em]">We are getting married</p>
+<h1 class="font-display-hero text-display-hero text-primary italic mb-12">Gian &amp; Thalia</h1>
+<div class="glass-panel inline-block px-12 py-8 rounded-2xl soft-shadow mx-auto mb-16">
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-4">September 24, 2025</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Lake Como, Italy</p>
+</div>
+<!-- Countdown -->
+<div class="flex justify-center gap-8 md:gap-16">
+<div class="text-center">
+<span class="block font-headline-lg text-headline-lg text-primary mb-2" id="days">245</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Days</span>
+</div>
+<div class="text-center">
+<span class="block font-headline-lg text-headline-lg text-primary mb-2" id="hours">14</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Hours</span>
+</div>
+<div class="text-center">
+<span class="block font-headline-lg text-headline-lg text-primary mb-2" id="mins">32</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Mins</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Spacer -->
+<div class="h-section-gap"></div>
+<!-- The Story Section -->
+<section class="px-gutter max-w-container-max mx-auto" id="story">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1 relative rounded-3xl overflow-hidden soft-shadow" style="padding-bottom: 120%;">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A high-end, editorial portrait of an elegant couple in a lush, sophisticated setting, perhaps near a European villa. The lighting is soft and natural, emphasizing a romantic, modern aesthetic with deep blues and crisp whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC62w3FocCSTVn-TPE7nW3LGyELUiS58klChBZhM7ph4Wcd0w4t6jRLT1al8Ap1yLsTSBOpqJ3NhNY-zRr5kHLQ9_b0HZDmBUQ93ByEYxRgFzaJjuZXxXxFhDdTeV70O_qFicMuLpqZCzoV5fV4nGWSwTnZZmuiSpxPtmj8r-u92LJtFI8eVzW_kGEXblWluH0WnkbQ76WHbE_n60fYjMn_1mMJwcEE-p1LZckk-k6HYTbXnNhui29nGCisAlZicapO8rWlqyi159f2"/>
+</div>
+<div class="order-1 md:order-2 space-y-8 md:pl-12">
+<h2 class="font-headline-lg text-headline-lg text-primary italic">Our Story</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                         What began as a chance encounter in a quiet corner of a bustling city blossomed into a profound connection. Through shared adventures, quiet moments, and a mutual love for design and travel, we've built a life together that feels both expansive and deeply intimate.
+                     </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                         We are thrilled to invite you to celebrate the next chapter of our journey in a place that holds a special piece of our hearts.
+                     </p>
+</div>
+</div>
+</section>
+<div class="h-section-gap"></div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full mt-section-gap bg-primary text-on-primary">
+<div class="flex flex-col items-center gap-8 py-section-gap px-gutter max-w-container-max mx-auto text-center">
+<h2 class="font-headline-md text-headline-md text-primary-fixed italic">Gian &amp; Thalia</h2>
+<ul class="flex flex-wrap justify-center gap-6 font-body-md text-body-md">
+<li><a class="text-on-primary-fixed-variant hover:text-white transition-colors" href="#">Contact</a></li>
+<li><a class="text-on-primary-fixed-variant hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-primary-fixed-variant hover:text-white transition-colors" href="#">Venue Map</a></li>
+<li><a class="text-on-primary-fixed-variant hover:text-white transition-colors" href="#">Guest FAQ</a></li>
+</ul>
+<p class="font-body-md text-body-md text-on-primary-fixed-variant opacity-90">© 2024 Gian &amp; Thalia. Made with love.</p>
+</div>
+</footer>
+<script>
+        // Simple mock countdown logic
+        function updateCountdown() {
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minsEl = document.getElementById('mins');
+            
+            if(daysEl && hoursEl && minsEl) {
+                let mins = parseInt(minsEl.innerText);
+                let hours = parseInt(hoursEl.innerText);
+                let days = parseInt(daysEl.innerText);
+
+                mins--;
+                if(mins < 0) {
+                    mins = 59;
+                    hours--;
+                }
+                if(hours < 0) {
+                    hours = 23;
+                    days--;
+                }
+                
+                minsEl.innerText = mins;
+                hoursEl.innerText = hours;
+                daysEl.innerText = days;
+            }
+        }
+        
+        setInterval(updateCountdown, 60000);
+    </script>
+</body></html>

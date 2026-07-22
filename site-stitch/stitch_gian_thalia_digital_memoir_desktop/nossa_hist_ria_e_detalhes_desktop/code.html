@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gian &amp; Thalia - The Story</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#001f29",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#d5e3ff",
+                        "primary-fixed-dim": "#afc8f0",
+                        "inverse-surface": "#2c3134",
+                        "secondary-fixed-dim": "#a7c8ff",
+                        "on-surface-variant": "#43474e",
+                        "tertiary": "#00070b",
+                        "tertiary-fixed-dim": "#76d2f6",
+                        "primary": "#000613",
+                        "surface-container-high": "#e4e9ed",
+                        "secondary": "#005eb2",
+                        "surface-bright": "#f6fafe",
+                        "on-primary-container": "#6f88ad",
+                        "on-surface": "#171c1f",
+                        "surface-container": "#eaeef2",
+                        "tertiary-fixed": "#baeaff",
+                        "on-secondary-fixed": "#001b3b",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#002e5d",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#2891b2",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#004788",
+                        "on-tertiary-fixed-variant": "#004d62",
+                        "primary-fixed": "#d4e3ff",
+                        "surface-container-highest": "#dfe3e7",
+                        "primary-container": "#001f3f",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d6dade",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f0f4f8",
+                        "outline": "#74777f",
+                        "surface-tint": "#476083",
+                        "on-background": "#171c1f",
+                        "secondary-container": "#4597fe",
+                        "outline-variant": "#c4c6cf",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#dfe3e7",
+                        "inverse-on-surface": "#edf1f5",
+                        "tertiary-container": "#00222d",
+                        "inverse-primary": "#afc8f0",
+                        "background": "#f6fafe",
+                        "on-primary-fixed-variant": "#2f486a",
+                        "on-primary-fixed": "#001c3a",
+                        "surface": "#f6fafe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1200px",
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "section-gap-mobile": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-hero-mobile": ["Playfair Display"],
+                        "display-hero": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "display-hero-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-hero": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .glass-panel { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 20px 40px rgba(0, 31, 63, 0.08); }
+        .text-gradient { background: linear-gradient(to right, theme('colors.primary-container'), theme('colors.secondary-container')); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-primary/70 backdrop-blur-xl border-b border-white/20 dark:border-primary-fixed/10 shadow-sm transition-all duration-500 ease-in-out hover:scale-105 hidden md:block">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed italic">Gian &amp; Thalia</div>
+<ul class="flex space-x-8 items-center">
+<li><a class="font-body-md text-body-md uppercase tracking-widest text-secondary dark:text-secondary-fixed border-b-2 border-secondary dark:border-secondary-fixed pb-1 hover:opacity-80 transition-opacity duration-300" href="#">The Story</a></li>
+<li><a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary transition-colors hover:opacity-80 duration-300" href="#">The Venue</a></li>
+<li><a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary transition-colors hover:opacity-80 duration-300" href="#">Travel</a></li>
+<li><a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-secondary transition-colors hover:opacity-80 duration-300" href="#">Registry</a></li>
+</ul>
+<button class="font-body-md text-body-md uppercase tracking-widest bg-primary-container text-on-primary px-6 py-2 rounded-full hover:opacity-80 transition-opacity duration-300">RSVP</button>
+</div>
+</nav>
+<main class="flex-grow pt-32 md:pt-40 pb-section-gap">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-gutter mb-section-gap">
+<div class="text-center space-y-6">
+<h1 class="font-display-hero text-display-hero text-primary italic">Our Journey</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">From a chance encounter to a lifetime of adventures, this is the story of how we found our forever in each other.</p>
+</div>
+</section>
+<!-- Horizontal Timeline -->
+<section class="relative max-w-container-max mx-auto px-gutter mb-section-gap overflow-x-auto pb-12">
+<div class="min-w-[1000px] flex gap-12 relative">
+<!-- Connecting Line -->
+<div class="absolute top-[200px] left-0 w-full h-px bg-outline-variant/30"></div>
+<!-- Milestone 1 -->
+<div class="flex-none w-80 relative z-10 group">
+<div class="h-[300px] rounded-lg overflow-hidden mb-6 shadow-sm group-hover:shadow-lg transition-shadow duration-300">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A candid, high-quality photograph of a couple meeting in a sunlit coffee shop. The lighting is warm and natural, creating a romantic, modern light-mode aesthetic. They are smiling slightly, capturing a genuine, early connection. The background features blurred, soft organic shapes of the cafe interior, utilizing a palette of soft whites, warm wood tones, and hints of deep navy for contrast. The mood is intimate and nostalgic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTn906ITZYFUl3semf5yStECEU-t02ohSgMLUwfyZ03Nh0KE8j8bIo5AwjA9TtWtTHtsOWA45MuWNzvnGWou8qE1To7HLCVyMub06IFRhfE_U80mddixCxwXx_VTuMX3FGAaJgLwzlbBAWWzOzXhVBvOWTqiPKodJJunBxVoRU53Ec1cUQbjTHsPiv7G5ok3RmaaH76yWK2nHdvaOsWPVw7YZAXlzGQAg6WeSYwvqon8zMVw_rXhX0qYVxv7soYjO2J27doKqCuQlV"/>
+</div>
+<div class="absolute top-[200px] -left-4 w-8 h-8 bg-surface rounded-full border-2 border-secondary flex items-center justify-center transform -translate-y-1/2">
+<div class="w-3 h-3 bg-secondary rounded-full"></div>
+</div>
+<div class="glass-panel p-6 rounded-xl mt-8">
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2">October 2018</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">How we met</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">It started with a spilled latte and a shared laugh at a crowded downtown café. What was supposed to be a quick apology turned into hours of conversation.</p>
+</div>
+</div>
+<!-- Milestone 2 -->
+<div class="flex-none w-80 relative z-10 group mt-16">
+<div class="h-[300px] rounded-lg overflow-hidden mb-6 shadow-sm group-hover:shadow-lg transition-shadow duration-300">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="An elegant, cinematic photograph of a couple walking along a city waterfront at twilight. The sky is a soft gradient of twilight blues and pale golds, fitting the modern editorial light-mode style. The lighting is soft and directional, highlighting their silhouettes against the water. The aesthetic is refined and aspirational, using deep navy shadows and soft white highlights. The mood is romantic and slightly mysterious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcN-iuD0LcRD_Bk2tuazrO6jJXBGaePchLvmfyIhaAfiRUANJfJQ9BtVHcjWi5OzTH6AAlNDJ010x8iLciTBGccbbOqQCghvTmEoXmRqjM_1gUzrVyRJejcn_aNDfdAdDcaTMSpTZwEuBlbfeHEs8qcYlwra5DMkS_s0i56-yYDmMQFMVXPoHKWg8Vw9LvqpVbgmyDEwJhy7fmWOtRGtpJOWoccTbq2tSuoVeimzGVzzI_QJ0R3AdkmpCLIiHk16phgYfUHq5YoaXL"/>
+</div>
+<div class="absolute top-[200px] -left-4 w-8 h-8 bg-surface rounded-full border-2 border-secondary flex items-center justify-center transform -translate-y-1/2">
+<div class="w-3 h-3 bg-secondary rounded-full"></div>
+</div>
+<div class="glass-panel p-6 rounded-xl mt-8">
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2">November 2018</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">First date</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">A crisp autumn evening walking along the waterfront, followed by dinner at a quiet Italian place where we discovered our mutual love for vintage jazz.</p>
+</div>
+</div>
+<!-- Milestone 3 -->
+<div class="flex-none w-80 relative z-10 group mt-8">
+<div class="h-[300px] rounded-lg overflow-hidden mb-6 shadow-sm group-hover:shadow-lg transition-shadow duration-300">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A breathtaking, wide-angle photograph of a proposal on a scenic, rocky coastline. The scene is bathed in golden hour sunlight, creating a bright, ethereal atmosphere that aligns with a high-end editorial wedding aesthetic. The couple is small in frame, emphasizing the grand landscape. The color palette features soft whites, deep oceanic blues, and warm golden hues. The mood is joyous, monumental, and emotionally resonant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4QEhSsFklfXfw0jgtmXRvf0UOEPtilHqs-lkA2PNBqW7BZNGbgAe9kJWynxwfGavVshZcjc_a973Fy0xj8tGOYQgkgKVsZoFmCBBR-mIbduYQf_K67e1DdYZlr0fsqJGIT8yyJCifz5UhVN1Yb4YDJORs02PNfxryJagHDqvFPzGqhTr2g6C5ozaIJoFeBi4naDScEAfSNvmS4I1QnGFJpqD-wXknRrDh3uyltXDtw6GhU_QM86EqJxzy81eAkllzeop3HsdQGIKD"/>
+</div>
+<div class="absolute top-[200px] -left-4 w-8 h-8 bg-surface rounded-full border-2 border-secondary flex items-center justify-center transform -translate-y-1/2">
+<div class="w-3 h-3 bg-secondary rounded-full"></div>
+</div>
+<div class="glass-panel p-6 rounded-xl mt-8">
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2">December 2023</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">The proposal</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">On a cliffside overlooking the ocean, just as the sun began to set, the easiest 'yes' was spoken surrounded by the sound of waves.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- The Big Day Details -->
+<section class="max-w-container-max mx-auto px-gutter mb-section-gap">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary italic">The Big Day</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="glass-panel p-12 rounded-2xl text-center flex flex-col justify-center items-center h-full">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">calendar_today</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">When</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-2">Saturday, September 14, 2024</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Ceremony begins at 4:00 PM<br/>Reception to follow</p>
+</div>
+<div class="glass-panel p-12 rounded-2xl text-center flex flex-col justify-center items-center h-full relative overflow-hidden group">
+<div class="absolute inset-0 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-30">
+<img class="w-full h-full object-cover" data-alt="An abstract, sophisticated architectural detail shot of an elegant wedding venue. Focus is on classical columns or intricate stone textures, shot in bright, diffused daylight for a modern light-mode feel. The colors are predominantly soft whites and warm creams, with subtle deep navy shadows providing contrast. The image serves as a subtle atmospheric background, evoking a sense of heritage and refined celebration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiBtEud5GrG2nxUy8OMOFCQ5eTd0qbvBYRWpnLlVbj0llLdHW3_2WxPS6zF0gaylLOPLDH5_1j5L7BLYmBKF8Cxy-ot2ip6aPRYB8uqZ6F6iu2tB2-d2VEuia2l-tNPHT7hDYguzrnw7atrnsnue8XHRgTYCKVedzFXaRFsYCDFW24CuLIkqZ2NuNBnPKvtHbNQ50YH7VSsHau0wTnHdq8o_yaf3Su4Eib8FeQjDTDBNXS4luQWDnApZK2_liETJf8h9UU42FLA2mi"/>
+</div>
+<div class="relative z-10 flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">location_on</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Where</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-2">Villa Balbiano</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Lake Como, Italy</p>
+<button class="px-6 py-2 border border-secondary text-secondary font-label-sm text-label-sm uppercase tracking-widest hover:bg-secondary hover:text-white transition-colors duration-300 rounded-full">View Map</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-section-gap bg-primary dark:bg-tertiary-container flex flex-col items-center gap-8 py-section-gap px-gutter max-w-container-max mx-auto text-center flat no shadows opacity-90 hover:opacity-100">
+<div class="font-headline-md text-headline-md text-primary-fixed">Gian &amp; Thalia</div>
+<ul class="flex space-x-6">
+<li><a class="font-body-md text-body-md text-on-primary-fixed-variant hover:text-white hover:text-secondary-fixed transition-colors" href="#">Contact</a></li>
+<li><a class="font-body-md text-body-md text-on-primary-fixed-variant hover:text-white hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-primary-fixed-variant hover:text-white hover:text-secondary-fixed transition-colors" href="#">Venue Map</a></li>
+<li><a class="font-body-md text-body-md text-on-primary-fixed-variant hover:text-white hover:text-secondary-fixed transition-colors" href="#">Guest FAQ</a></li>
+</ul>
+<div class="font-body-md text-body-md text-on-primary dark:text-tertiary-fixed">© 2024 Gian &amp; Thalia. Made with love.</div>
+</footer>
+</body></html>

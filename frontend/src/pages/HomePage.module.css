@@ -1,0 +1,189 @@
+/* ---------------- HERO ---------------- */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--navbar-h));
+  padding: var(--space-8) var(--space-5);
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(0, 116, 217, 0.08), transparent 60%),
+    var(--surface);
+  text-align: center;
+  overflow: hidden;
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: 720px;
+}
+
+.heroEyebrow {
+  color: var(--accent-strong);
+}
+
+.names {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-3xl);
+  line-height: 1.05;
+  color: var(--navy-800);
+  letter-spacing: -0.01em;
+}
+.amp {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.tagline {
+  font-size: var(--fs-lg);
+  color: var(--text-soft);
+  max-width: 30ch;
+}
+
+.dateCard {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  margin-top: var(--space-2);
+}
+.dateLabel {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  color: var(--navy-800);
+  letter-spacing: 0.02em;
+}
+.dateLocation {
+  font-size: var(--fs-sm);
+  color: var(--text-soft);
+}
+
+.countdown {
+  margin-top: var(--space-4);
+}
+
+.scrollCue {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-top: var(--space-5);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.scrollCue svg {
+  animation: bob 1.8s var(--ease-out) infinite;
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+/* Hero escuro no mobile (espelha o design mobile) */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    background: var(--gradient-hero);
+    color: var(--on-dark);
+  }
+  .names {
+    color: var(--white);
+  }
+  .amp {
+    color: var(--sky-400);
+  }
+  .heroEyebrow {
+    color: var(--sky-400);
+  }
+  .tagline {
+    color: var(--on-dark-soft);
+  }
+  .dateCard {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+  .dateLabel {
+    color: var(--white);
+  }
+  .dateLocation {
+    color: var(--on-dark-soft);
+  }
+  .scrollCue {
+    color: var(--on-dark-soft);
+  }
+}
+
+/* ---------------- NOSSA HISTÓRIA ---------------- */
+.story {
+  padding-block: var(--section-gap);
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(var(--space-6), 5vw, var(--space-9));
+}
+
+.storyMedia {
+  aspect-ratio: 4 / 5;
+  /* raio orgânico assimétrico (assinatura do design) */
+  border-radius: var(--radius-xl) var(--radius) var(--radius-xl) var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--surface-alt);
+}
+.storyMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.storyPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: var(--sky-200);
+  background: linear-gradient(160deg, var(--surface-alt), var(--surface-container));
+}
+
+.storyText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.storyTitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+}
+.storyText p {
+  color: var(--text-soft);
+}
+.storyActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+@media (max-width: 768px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+  }
+  .storyMedia {
+    aspect-ratio: 3 / 4;
+    max-height: 60vh;
+  }
+}
