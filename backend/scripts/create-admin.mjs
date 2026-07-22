@@ -1,13 +1,21 @@
 #!/usr/bin/env node
 /**
- * Gera o SQL para criar o primeiro administrador (hash PBKDF2 compatível com o Worker).
+ * Gera o SQL para criar/atualizar um administrador (hash PBKDF2 compatível com o Worker).
  *
  * Uso:
  *   node scripts/create-admin.mjs "email@exemplo.com" "Nome" "senha"
  *
- * Depois rode o SQL impresso, por exemplo:
- *   wrangler d1 execute casamento-db --remote --command "<SQL>"
+ * O hash contém caracteres "$". Passar esse SQL inline no PowerShell/CMD faz o shell
+ * tentar expandir "$..." como variável e CORROMPE o hash (login dá "senha inválida").
+ * Por isso este script grava o SQL em `backend/admin-seed.sql` e você o aplica com --file,
+ * o que evita qualquer problema de aspas/escape:
+ *
+ *   npx wrangler d1 execute casamento-db --remote --file=backend/admin-seed.sql -c backend/wrangler.toml
  */
+
+import { writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 
 const [, , email, name, password] = process.argv;
 
@@ -43,12 +51,17 @@ const hash = `pbkdf2$${ITER}$${b64url(salt)}$${b64url(new Uint8Array(bits))}`;
 const safeEmail = email.trim().toLowerCase().replace(/'/g, "''");
 const safeName = name.replace(/'/g, "''");
 
-const sql = `INSERT INTO admin_users (email, name, password_hash) VALUES ('${safeEmail}', '${safeName}', '${hash}');`;
+// INSERT OR REPLACE: se o e-mail já existir (ex.: um hash quebrado de uma tentativa
+// anterior), a linha é substituída pela nova — corrige o cadastro.
+const sql = `INSERT OR REPLACE INTO admin_users (email, name, password_hash) VALUES ('${safeEmail}', '${safeName}', '${hash}');\n`;
 
-console.log('\n--- SQL para criar o admin ---\n');
-console.log(sql);
-console.log('\n--- Rode (banco remoto) ---\n');
-console.log(`wrangler d1 execute casamento-db --remote --command "${sql.replace(/"/g, '\\"')}"`);
-console.log('\n--- Ou local (dev) ---\n');
-console.log(`wrangler d1 execute casamento-db --local --command "${sql.replace(/"/g, '\\"')}"`);
-console.log('');
+// Grava o arquivo na raiz de backend/ (../ a partir de scripts/)
+const outPath = join(dirname(fileURLToPath(import.meta.url)), '..', 'admin-seed.sql');
+writeFileSync(outPath, sql, 'utf8');
+
+console.log('\n✅ SQL gravado em: backend/admin-seed.sql\n');
+console.log('Agora aplique no banco REMOTO (produção):\n');
+console.log('  npx wrangler d1 execute casamento-db --remote --file=backend/admin-seed.sql -c backend/wrangler.toml\n');
+console.log('Ou no banco LOCAL (dev):\n');
+console.log('  npx wrangler d1 execute casamento-db --local --file=backend/admin-seed.sql -c backend/wrangler.toml\n');
+console.log('Depois, apague o arquivo (contém o hash da senha): del backend\\admin-seed.sql\n');

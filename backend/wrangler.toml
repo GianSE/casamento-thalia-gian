@@ -16,7 +16,7 @@ binding = "ASSETS"
 [[d1_databases]]
 binding = "DB"
 database_name = "casamento-db"
-database_id = "COLE_AQUI_O_DATABASE_ID"
+database_id = "419da4dd-e9f5-4b58-81d5-059405a3ed1b"
 migrations_dir = "migrations"
 
 # Segredos (defina com `wrangler secret put NOME`):
@@ -25,6 +25,7 @@ migrations_dir = "migrations"
 [vars]
 APP_ENV = "production"
 # Cloudinary (armazenamento de fotos, grátis, sem cartão).
-# cloud_name e api_key não são sensíveis; preencha com os seus:
-CLOUDINARY_CLOUD_NAME = "SEU_CLOUD_NAME"
-CLOUDINARY_API_KEY = "SUA_API_KEY"
+# Reaproveitando a mesma conta Cloudinary do site-capela (as fotos deste site
+# ficam em pastas separadas: casamento/*). cloud_name e api_key não são sensíveis.
+CLOUDINARY_CLOUD_NAME = "ohqk1n9a"
+CLOUDINARY_API_KEY = "745375866891331"

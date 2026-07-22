@@ -2,6 +2,7 @@ node_modules/
 dist/
 .wrangler/
 .dev.vars
+admin-seed.sql
 *.local
 .DS_Store
 frontend/tsconfig*.tsbuildinfo

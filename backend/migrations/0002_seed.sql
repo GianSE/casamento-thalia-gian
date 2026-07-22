@@ -10,8 +10,8 @@ INSERT INTO settings (key, value) VALUES
   ('couple_name_2',     'Thalia'),
   ('hero_tagline',      'Uma história de amor, um dia para celebrar.'),
   -- Data/hora do casamento em ISO (usada na contagem regressiva). Ajuste no /admin.
-  ('wedding_date',      '2025-11-25T16:00:00'),
-  ('wedding_date_label','25 de Novembro, 2025'),
+  ('wedding_date',      '2028-05-18T16:00:00'),
+  ('wedding_date_label','18 de Maio de 2028'),
   ('location_name',     'Espaço a definir'),
   ('location_city',     'Brasil'),
   ('story_title',       'Nossa História'),
@@ -48,7 +48,7 @@ INSERT INTO timeline (date_label, title, body, sort_order) VALUES
 
 -- ---------- Detalhes do grande dia ----------
 INSERT INTO events (kind, title, info, info2, sort_order) VALUES
-  ('cerimonia', 'Quando', 'Sábado, 25 de Novembro de 2025', 'Cerimônia às 16h · Recepção a seguir', 1);
+  ('cerimonia', 'Quando', '18 de Maio de 2028', 'Cerimônia às 16h · Recepção a seguir', 1);
 INSERT INTO events (kind, title, subtitle, info, map_url, sort_order) VALUES
   ('local', 'Onde', 'Espaço a definir', 'Cidade, Brasil', '', 2);
 

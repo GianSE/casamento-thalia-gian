@@ -5,10 +5,10 @@
  */
 
 /**
- * Nome da sua conta Cloudinary (cloud name) — não é segredo.
- * Pegue no painel do Cloudinary (Dashboard → "Cloud name") e preencha aqui.
+ * Nome da conta Cloudinary (cloud name) — não é segredo.
+ * Reaproveitando a mesma conta do site-capela.
  */
-export const CLOUDINARY_CLOUD = 'SEU_CLOUD_NAME';
+export const CLOUDINARY_CLOUD = 'ohqk1n9a';
 
 /** E-mail da conta principal (dona do painel) — não removível no /admin. */
 export const PRIMARY_ADMIN_EMAIL = 'gianpedrodev@gmail.com';
@@ -19,8 +19,8 @@ export const SETTINGS_DEFAULTS = {
   couple_name_1: 'Gian',
   couple_name_2: 'Thalia',
   hero_tagline: 'Uma história de amor, um dia para celebrar.',
-  wedding_date: '2025-11-25T16:00:00',
-  wedding_date_label: '25 de Novembro, 2025',
+  wedding_date: '2028-05-18T16:00:00',
+  wedding_date_label: '18 de Maio de 2028',
   location_name: 'Espaço a definir',
   location_city: 'Brasil',
   story_title: 'Nossa História',
