@@ -28,7 +28,7 @@ export const SETTINGS_DEFAULTS = {
     'O que começou como um encontro casual floresceu em uma conexão profunda. Estamos muito felizes em convidar você para celebrar o próximo capítulo da nossa jornada.',
   journey_title: 'Nossa Jornada',
   journey_subtitle:
-    'De um encontro casual a uma vida inteira de aventuras, esta é a história de como nos encontramos.',
+    'De um churrasco na véspera do primeiro dia de aula até o sim que nos trouxe até aqui.',
   rsvp_title: 'Confirme sua Presença',
   rsvp_subtitle:
     'Gostaríamos muito de contar com a sua presença neste dia tão especial. Por favor, confirme preenchendo o formulário abaixo.',
