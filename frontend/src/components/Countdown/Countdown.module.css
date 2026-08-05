@@ -34,7 +34,8 @@
   color: var(--navy-800);
 }
 
-/* Variante sobre fundo escuro (hero mobile) */
+/* Variante para fundo escuro (`tone="dark"`). O hero deixou de ser escuro no
+   mobile, então hoje nenhuma tela usa — fica disponível para quem precisar. */
 .dark .value {
   color: var(--white);
 }

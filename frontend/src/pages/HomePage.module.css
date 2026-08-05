@@ -89,37 +89,11 @@
   50% { transform: translateY(4px); }
 }
 
-/* Hero escuro no mobile (espelha o design mobile) */
 @media (max-width: 768px) {
+  /* A navbar do topo some no mobile (vira a tab bar inferior), então o hero
+     ocupa a tela inteira em vez de descontar a altura dela. */
   .hero {
     min-height: 100vh;
-    background: var(--gradient-hero);
-    color: var(--on-dark);
-  }
-  .names {
-    color: var(--white);
-  }
-  .amp {
-    color: var(--sky-400);
-  }
-  .heroEyebrow {
-    color: var(--sky-400);
-  }
-  .tagline {
-    color: var(--on-dark-soft);
-  }
-  .dateCard {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.25);
-  }
-  .dateLabel {
-    color: var(--white);
-  }
-  .dateLocation {
-    color: var(--on-dark-soft);
-  }
-  .scrollCue {
-    color: var(--on-dark-soft);
   }
 }
 
