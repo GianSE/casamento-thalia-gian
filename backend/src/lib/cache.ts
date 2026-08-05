@@ -58,6 +58,7 @@ export function edgeCache(
     if (hit && !expired(hit)) {
       const res = new Response(hit.body, hit);
       res.headers.set('X-Cache', 'HIT');
+      res.headers.delete(EXPIRES_HEADER); // detalhe interno, não vai ao cliente
       return res;
     }
 
@@ -68,9 +69,14 @@ export function edgeCache(
     c.res.headers.set(EXPIRES_HEADER, String(Date.now() + opts.edge * 1000));
     c.res.headers.set('X-Cache', 'MISS');
 
+    // O clone copia os headers agora — por isso ele leva o carimbo de validade
+    // e a resposta que segue para o convidado pode perdê-lo logo abaixo.
+    const toStore = c.res.clone();
+    c.res.headers.delete(EXPIRES_HEADER);
+
     // Guarda em background: não atrasa a resposta do convidado.
     try {
-      c.executionCtx.waitUntil(cache.put(key, c.res.clone()));
+      c.executionCtx.waitUntil(cache.put(key, toStore));
     } catch {
       /* fora do runtime da Cloudflare (dev local) — segue sem cachear */
     }

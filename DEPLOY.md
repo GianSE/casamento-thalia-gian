@@ -7,7 +7,7 @@ Tudo no plano **grátis, sem cartão**. Faça o setup uma vez; depois cada `git 
 1. Crie uma conta grátis em https://cloudinary.com (sem cartão).
 2. No **Dashboard**, copie: **Cloud name**, **API Key** e **API Secret**.
 3. Preencha:
-   - `backend/wrangler.toml` → `CLOUDINARY_CLOUD_NAME` e `CLOUDINARY_API_KEY`
+   - `wrangler.toml` → `CLOUDINARY_CLOUD_NAME` e `CLOUDINARY_API_KEY`
    - `frontend/src/data/site.ts` → `CLOUDINARY_CLOUD` (o mesmo cloud name)
    - O **API Secret** entra como secret (passo 4), **nunca** no código.
 
@@ -21,7 +21,7 @@ npx wrangler login
 npx wrangler d1 create casamento-db
 ```
 
-Cole o `database_id` em `backend/wrangler.toml` (campo `database_id`).
+Cole o `database_id` em `wrangler.toml` (na raiz) (campo `database_id`).
 
 Aplique o schema no banco remoto:
 
@@ -32,10 +32,8 @@ npm run migrate:remote
 ## 3. Secrets do Worker
 
 ```bash
-cd backend
 npx wrangler secret put JWT_SECRET            # uma frase secreta longa e aleatória
 npx wrangler secret put CLOUDINARY_API_SECRET # o API Secret do Cloudinary
-cd ..
 ```
 
 ## 4. Criar o primeiro admin (noivos)
@@ -65,7 +63,9 @@ npm run deploy
 No painel da Cloudflare → **Workers & Pages → Workers Builds**, conecte o repositório com:
 
 - **Build command:** `npm run build`
-- **Deploy command:** `npx wrangler deploy -c backend/wrangler.toml`
+- **Deploy command:** `npx wrangler deploy`
+- **Version command:** `npx wrangler versions upload`
+- **Root directory:** `/`
 
 A partir daí, todo push na branch principal publica sozinho.
 
@@ -78,7 +78,7 @@ Migre os nameservers para a Cloudflare antes.
 
 ```bash
 # terminal 1 — Worker + D1 local
-cp backend/.dev.vars.example backend/.dev.vars   # edite os valores
+cp .dev.vars.example .dev.vars   # edite os valores
 npm run migrate:local
 npm run dev:backend
 
@@ -89,7 +89,7 @@ npm run dev:frontend    # abre http://localhost:5173  (admin em /admin)
 ## Checklist rápido
 
 - [ ] Conta Cloudinary criada; cloud name/key em `wrangler.toml` + `site.ts`
-- [ ] `wrangler d1 create casamento-db` e `database_id` colado no `wrangler.toml`
+- [ ] `wrangler d1 create casamento-db` e `database_id` colado no `wrangler.toml` (raiz)
 - [ ] `npm run migrate:remote`
 - [ ] Secrets `JWT_SECRET` e `CLOUDINARY_API_SECRET` definidos
 - [ ] Admin inicial criado

@@ -4,11 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "description": "API do casamento Gian & Thalia — Hono no Cloudflare Workers (D1 + Cloudinary)",
+  "//": "Os comandos do wrangler (dev, deploy, migrações) vivem no package.json da raiz, junto do wrangler.toml — o deploy publica o Worker e o frontend juntos.",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
-    "db:migrate:local": "wrangler d1 migrations apply casamento-db --local",
-    "db:migrate:remote": "wrangler d1 migrations apply casamento-db --remote"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "hono": "^4.6.14"

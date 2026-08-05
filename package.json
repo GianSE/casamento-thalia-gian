@@ -9,11 +9,11 @@
   ],
   "scripts": {
     "dev:frontend": "npm run dev -w frontend",
-    "dev:backend": "npm run dev -w backend",
+    "dev:backend": "wrangler dev",
     "build": "npm run build -w frontend",
-    "deploy": "npm run build -w frontend && wrangler deploy -c backend/wrangler.toml",
-    "migrate:local": "wrangler d1 migrations apply casamento-db --local -c backend/wrangler.toml",
-    "migrate:remote": "wrangler d1 migrations apply casamento-db --remote -c backend/wrangler.toml",
+    "deploy": "npm run build -w frontend && wrangler deploy",
+    "migrate:local": "wrangler d1 migrations apply casamento-db --local",
+    "migrate:remote": "wrangler d1 migrations apply casamento-db --remote",
     "create-admin": "node backend/scripts/create-admin.mjs"
   },
   "devDependencies": {

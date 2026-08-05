@@ -42,7 +42,7 @@ npm run create-admin -- "email" "Nome" "senha"   # gera SQL do admin
 npm run deploy              # build + wrangler deploy (precisa login + setup)
 ```
 
-Para dev local, crie `backend/.dev.vars` (veja `.dev.vars.example`):
+Para dev local, crie `.dev.vars` na raiz (veja `.dev.vars.example`):
 ```
 JWT_SECRET=algum-segredo-de-dev
 APP_ENV=development
@@ -97,12 +97,12 @@ Desligado → aparece na hora. Lógica no backend (`routes/public.ts`, `getSetti
 ## Deploy no Cloudflare
 
 Ver **DEPLOY.md**. Resumo: após o setup único (criar D1, conta Cloudinary, `database_id`
-no `backend/wrangler.toml`, `cloud_name`/`api_key` nas vars e em `frontend/src/data/site.ts`,
+no `wrangler.toml` (raiz), `cloud_name`/`api_key` nas vars e em `frontend/src/data/site.ts`,
 secrets `JWT_SECRET` + `CLOUDINARY_API_SECRET`, admin inicial), conectar o repositório no
 **Cloudflare → Workers & Pages → Workers Builds** com:
 
 - **Build command:** `npm run build`
-- **Deploy command:** `npx wrangler deploy -c backend/wrangler.toml`
+- **Deploy command:** `npx wrangler deploy`
 
 Cada `git push` na branch principal dispara build + deploy. Mudanças de schema exigem
 `npm run migrate:remote` manual.

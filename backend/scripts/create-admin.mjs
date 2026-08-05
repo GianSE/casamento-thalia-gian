@@ -10,7 +10,7 @@
  * Por isso este script grava o SQL em `backend/admin-seed.sql` e você o aplica com --file,
  * o que evita qualquer problema de aspas/escape:
  *
- *   npx wrangler d1 execute casamento-db --remote --file=backend/admin-seed.sql -c backend/wrangler.toml
+ *   npx wrangler d1 execute casamento-db --remote --file=backend/admin-seed.sql
  */
 
 import { writeFileSync } from 'node:fs';
@@ -61,7 +61,7 @@ writeFileSync(outPath, sql, 'utf8');
 
 console.log('\n✅ SQL gravado em: backend/admin-seed.sql\n');
 console.log('Agora aplique no banco REMOTO (produção):\n');
-console.log('  npx wrangler d1 execute casamento-db --remote --file=backend/admin-seed.sql -c backend/wrangler.toml\n');
+console.log('  npx wrangler d1 execute casamento-db --remote --file=backend/admin-seed.sql\n');
 console.log('Ou no banco LOCAL (dev):\n');
-console.log('  npx wrangler d1 execute casamento-db --local --file=backend/admin-seed.sql -c backend/wrangler.toml\n');
+console.log('  npx wrangler d1 execute casamento-db --local --file=backend/admin-seed.sql\n');
 console.log('Depois, apague o arquivo (contém o hash da senha): del backend\\admin-seed.sql\n');

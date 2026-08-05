@@ -15,7 +15,7 @@ Site do casamento com site público + painel dos noivos, rodando 100% grátis na
 
 ```bash
 npm install
-cp backend/.dev.vars.example backend/.dev.vars   # edite
+cp .dev.vars.example .dev.vars   # edite
 npm run migrate:local
 npm run dev:backend     # terminal 1  → :8787
 npm run dev:frontend    # terminal 2  → :5173
@@ -35,6 +35,6 @@ Detalhes de arquitetura em [CLAUDE.md](CLAUDE.md) · Deploy em [DEPLOY.md](DEPLO
 
 ## Antes de publicar
 
-Preencha o Cloudinary (`backend/wrangler.toml` + `frontend/src/data/site.ts`), crie o D1,
+Preencha o Cloudinary (`wrangler.toml` + `frontend/src/data/site.ts`), crie o D1,
 os secrets e o admin — passo a passo em **[DEPLOY.md](DEPLOY.md)**. Depois, entre em `/admin`
 → **Configurações** para definir data do casamento, chave PIX, textos e moderação.

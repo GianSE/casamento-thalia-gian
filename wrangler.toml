@@ -1,11 +1,14 @@
+# Configuração do deploy — fica na raiz porque o que sobe é o projeto inteiro:
+# o Worker (backend/) e os assets do frontend (frontend/dist). Todos os caminhos
+# abaixo são relativos a este arquivo, ou seja, à raiz do repositório.
 name = "casamento-thalia-gian"
-main = "src/index.ts"
+main = "backend/src/index.ts"
 compatibility_date = "2024-12-18"
 compatibility_flags = ["nodejs_compat"]
 
 # Serve o frontend buildado (SPA) pelo mesmo Worker — sem CORS, uma única URL.
 [assets]
-directory = "../frontend/dist"
+directory = "frontend/dist"
 not_found_handling = "single-page-application"
 # Garante que requests /api/* executem o Worker antes de tentar servir um asset.
 binding = "ASSETS"
@@ -23,7 +26,7 @@ run_worker_first = true
 binding = "DB"
 database_name = "casamento-db"
 database_id = "419da4dd-e9f5-4b58-81d5-059405a3ed1b"
-migrations_dir = "migrations"
+migrations_dir = "backend/migrations"
 
 # Segredos (defina com `wrangler secret put NOME`):
 #   JWT_SECRET             → chave para assinar tokens de sessão do admin
