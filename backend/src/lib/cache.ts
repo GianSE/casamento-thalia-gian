@@ -22,7 +22,16 @@ interface CacheOptions {
   browser: number;
   /** Segundos de cache na borda da Cloudflare. */
   edge: number;
-  /** Janela em que a borda pode servir o conteúdo velho enquanto revalida. */
+  /**
+   * Janela em que o navegador pode mostrar o conteúdo velho enquanto busca o
+   * novo em segundo plano. Omitido por padrão, de propósito.
+   *
+   * Este middleware não revalida em background — quem se aproveitaria da
+   * diretiva é só o navegador do visitante. Com uma janela larga, os noivos
+   * editam algo no /admin, o dado já está certo no D1 e na borda, e mesmo
+   * assim o navegador deles continua mostrando a versão antiga por horas.
+   * A previsibilidade vale mais que o milissegundo economizado aqui.
+   */
   swr?: number;
 }
 
@@ -45,8 +54,8 @@ export function edgeCache(
   opts: CacheOptions
 ): MiddlewareHandler<{ Bindings: Env; Variables: Variables }> {
   const header =
-    `public, max-age=${opts.browser}, s-maxage=${opts.edge}, ` +
-    `stale-while-revalidate=${opts.swr ?? 86400}`;
+    `public, max-age=${opts.browser}, s-maxage=${opts.edge}` +
+    (opts.swr ? `, stale-while-revalidate=${opts.swr}` : '');
 
   return async (c, next) => {
     if (c.req.method !== 'GET') return next();
