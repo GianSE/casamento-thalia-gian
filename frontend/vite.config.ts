@@ -25,9 +25,25 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'motion-vendor': ['framer-motion'],
+        /**
+         * Divisão por caminho do módulo (e não por nome de pacote).
+         *
+         * Com a lista `['react', 'react-dom', ...]` o Rollup deixava
+         * `react/jsx-runtime` de fora do chunk do React e o encaixava no do
+         * framer-motion. Como todo componente importa o runtime de JSX, o
+         * resultado era o site público baixar 38 kB (gzip) da biblioteca de
+         * animação que só o /admin usa.
+         */
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return;
+          const path = id.replace(/\\/g, '/');
+
+          if (/\/node_modules\/(framer-motion|motion-dom|motion-utils)\//.test(path)) {
+            return 'motion-vendor';
+          }
+          if (/\/node_modules\/(react|react-dom|react-router|react-router-dom|scheduler)\//.test(path)) {
+            return 'react-vendor';
+          }
         },
       },
     },

@@ -1,7 +1,7 @@
 import { useSettings } from '../hooks/useSettings';
 import { useSeo } from '../hooks/useSeo';
 import { useFetch } from '../hooks/useFetch';
-import { imgUrl } from '../lib/api';
+import { imgUrl, imgSrcSet } from '../lib/api';
 import { SectionHeader } from '../components/SectionHeader/SectionHeader';
 import { Reveal } from '../components/Reveal/Reveal';
 import { Loader } from '../components/Loader/Loader';
@@ -39,7 +39,14 @@ export default function HistoriaPage() {
                 <Reveal className={styles.tCard} delay={i * 0.05}>
                   {item.image_id && (
                     <div className={styles.tMedia}>
-                      <img src={imgUrl(item.image_id, 700)} alt={item.title} loading="lazy" />
+                      <img
+                        src={imgUrl(item.image_id, 700)}
+                        srcSet={imgSrcSet(item.image_id, [360, 540, 700])}
+                        sizes="(max-width: 768px) 92vw, 620px"
+                        alt={item.title}
+                        loading="lazy"
+                        decoding="async"
+                      />
                     </div>
                   )}
                   <div className={styles.tBody}>

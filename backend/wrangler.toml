@@ -9,6 +9,12 @@ directory = "../frontend/dist"
 not_found_handling = "single-page-application"
 # Garante que requests /api/* executem o Worker antes de tentar servir um asset.
 binding = "ASSETS"
+# Sem isto o index.html é entregue direto pelo servidor de assets e o Worker
+# nem roda — ou seja, não há como injetar as configurações do site no HTML.
+# Com `true`, todo request passa pelo Worker; os que não são /api/* e não são
+# HTML voltam intactos de `ASSETS.fetch` (custo desprezível, e os arquivos com
+# hash no nome continuam com cache imutável no navegador).
+run_worker_first = true
 
 # Banco de dados D1 (SQLite). Crie com:
 #   wrangler d1 create casamento-db

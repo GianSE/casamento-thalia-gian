@@ -66,3 +66,28 @@ export function imgUrl(publicId: string, width?: number): string {
   const t = width ? `f_auto,q_auto,c_limit,w_${width}` : 'f_auto,q_auto';
   return `https://res.cloudinary.com/${CLOUDINARY_CLOUD}/image/upload/${t}/${publicId}`;
 }
+
+/**
+ * `srcset` com várias larguras para o browser escolher a certa.
+ *
+ * Sem isso um tile de 180px na galeria mobile baixa a versão de 700px — quase
+ * 4x mais bytes no 4G do convidado. Combine sempre com `sizes`.
+ */
+export function imgSrcSet(publicId: string, widths: number[]): string {
+  return widths.map((w) => `${imgUrl(publicId, w)} ${w}w`).join(', ');
+}
+
+/**
+ * Dimensões intrínsecas depois do `c_limit,w_<max>` do Cloudinary, para o
+ * browser reservar o espaço da imagem antes de baixá-la.
+ * Retorna vazio quando o banco não tem as medidas.
+ */
+export function imgDims(
+  width: number | null | undefined,
+  height: number | null | undefined,
+  max: number
+): { width?: number; height?: number } {
+  if (!width || !height) return {};
+  const scale = Math.min(1, max / width);
+  return { width: Math.round(width * scale), height: Math.round(height * scale) };
+}

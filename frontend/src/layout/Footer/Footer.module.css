@@ -58,6 +58,31 @@
   background: rgba(127, 219, 255, 0.1);
 }
 
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Link do painel: apagado o bastante para não competir com o conteúdo,
+   mas legível — e com contraste cheio ao passar o mouse ou receber foco. */
+.admin {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--on-dark-soft);
+  opacity: 0.6;
+  transition: opacity var(--dur-fast), color var(--dur-fast);
+}
+.admin:hover,
+.admin:focus-visible {
+  opacity: 1;
+  color: var(--sky-400);
+}
+
 .copy {
   display: inline-flex;
   align-items: center;

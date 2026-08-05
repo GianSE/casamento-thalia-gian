@@ -1,7 +1,7 @@
 import { useState, useEffect, type FormEvent } from 'react';
 import { useSettings } from '../hooks/useSettings';
 import { useSeo } from '../hooks/useSeo';
-import { api, imgUrl } from '../lib/api';
+import { api, imgUrl, imgSrcSet } from '../lib/api';
 import { SectionHeader } from '../components/SectionHeader/SectionHeader';
 import { Reveal } from '../components/Reveal/Reveal';
 import { Icon } from '../components/Icon/Icon';
@@ -53,7 +53,11 @@ export default function PresentesPage() {
         setFeedback('Recado enviado! Ele aparecerá no mural após a aprovação dos noivos. 🤍');
       } else {
         setFeedback('Obrigado pelo seu recado! 🤍');
-        const fresh = await api.get<Message[]>('/messages').catch(() => messages);
+        // `_` fura o cache de borda (60s): sem isso o convidado recarregava o
+        // mural e não encontrava o próprio recado.
+        const fresh = await api
+          .get<Message[]>(`/messages?_=${Date.now()}`)
+          .catch(() => messages);
         setMessages(fresh);
       }
       setName('');
@@ -77,7 +81,14 @@ export default function PresentesPage() {
               <article className={styles.giftCard}>
                 {g.image_id ? (
                   <div className={styles.giftMedia}>
-                    <img src={imgUrl(g.image_id, 640)} alt={g.title} loading="lazy" />
+                    <img
+                      src={imgUrl(g.image_id, 640)}
+                      srcSet={imgSrcSet(g.image_id, [320, 480, 640])}
+                      sizes="(max-width: 768px) 92vw, 360px"
+                      alt={g.title}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                 ) : (
                   <div className={`${styles.giftMedia} ${styles.giftMediaEmpty}`} aria-hidden="true">

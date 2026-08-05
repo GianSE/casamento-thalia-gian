@@ -1,0 +1,23 @@
+/* Fade + slide na entrada em viewport. As custom properties são definidas
+   inline pelo componente (delay e deslocamento). */
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--reveal-y, 24px));
+  transition:
+    opacity 0.6s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)) var(--reveal-delay, 0s),
+    transform 0.6s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)) var(--reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.visible {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transform: none;
+    transition: opacity 0.4s ease var(--reveal-delay, 0s);
+  }
+}

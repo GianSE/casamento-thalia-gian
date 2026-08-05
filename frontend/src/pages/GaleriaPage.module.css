@@ -41,8 +41,47 @@
   color: var(--text-soft);
   font-size: var(--fs-sm);
 }
+.dropActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+/* Ação principal no celular: abre a câmera direto na página. */
+.cameraBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  background: var(--accent);
+  color: var(--on-dark);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--dur-fast), transform var(--dur-fast);
+}
+.cameraBtn:hover:not(:disabled) {
+  background: var(--accent-strong);
+  transform: translateY(-2px);
+}
+.cameraBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.more {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-6);
+}
+
 .dropBtn {
-  margin-top: var(--space-3);
   padding: var(--space-3) var(--space-6);
   border: 1px solid var(--accent);
   border-radius: var(--radius-full);

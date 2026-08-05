@@ -2,8 +2,6 @@ import { createBrowserRouter } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { RootLayout } from './layout/RootLayout';
 import { Loader } from './components/Loader/Loader';
-import { AuthProvider } from './admin/AuthContext';
-import { AdminLayout } from './admin/AdminLayout';
 
 // ---- Públicas ----
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -14,7 +12,10 @@ const RsvpPage = lazy(() => import('./pages/RsvpPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 // ---- Admin ----
-const LoginPage = lazy(() => import('./admin/LoginPage'));
+// Raízes carregadas sob demanda: o painel (com o provider de sessão, o CSS do
+// admin e o framer-motion) fica fora do bundle do site público.
+const AdminRoot = lazy(() => import('./admin/AdminRoot'));
+const LoginRoot = lazy(() => import('./admin/LoginRoot'));
 const DashboardPage = lazy(() => import('./admin/DashboardPage'));
 const RsvpsAdmin = lazy(() => import('./admin/RsvpsAdmin'));
 const MessagesAdmin = lazy(() => import('./admin/MessagesAdmin'));
@@ -46,17 +47,13 @@ export const router = createBrowserRouter([
   // ---------- Login (sem layout admin) ----------
   {
     path: '/admin/login',
-    element: <AuthProvider>{page(<LoginPage />)}</AuthProvider>,
+    element: page(<LoginRoot />),
   },
 
   // ---------- Painel admin (protegido) ----------
   {
     path: '/admin',
-    element: (
-      <AuthProvider>
-        <AdminLayout />
-      </AuthProvider>
-    ),
+    element: page(<AdminRoot />),
     children: [
       { index: true, element: page(<DashboardPage />) },
       { path: 'rsvps', element: page(<RsvpsAdmin />) },

@@ -1,6 +1,7 @@
 import { Hono } from 'hono';
 import type { Env, Variables } from '../types';
 import { uploadImage } from '../lib/cloudinary';
+import { edgeCache } from '../lib/cache';
 
 /** Rotas públicas: leitura do conteúdo + envios dos convidados (RSVP, recados, fotos). */
 export const publicRoutes = new Hono<{ Bindings: Env; Variables: Variables }>();
@@ -13,8 +14,21 @@ async function getSetting(env: Env, key: string): Promise<string | null> {
   return row?.value ?? null;
 }
 
+/** Lê `limit`/`offset` da query com teto, para não devolver a tabela inteira. */
+function paginate(url: string, fallback: number, max: number) {
+  const q = new URL(url).searchParams;
+  const limit = Math.min(max, Math.max(1, Number(q.get('limit')) || fallback));
+  const offset = Math.max(0, Number(q.get('offset')) || 0);
+  return { limit, offset };
+}
+
+// Conteúdo dos noivos: muda raramente, pode ficar no navegador por 1 min.
+const CONTENT_CACHE = edgeCache({ browser: 60, edge: 300 });
+// Conteúdo de convidado: só cache de borda, para o envio aparecer rápido.
+const GUEST_CACHE = edgeCache({ browser: 0, edge: 60 });
+
 // ---------- Configurações do site ----------
-publicRoutes.get('/settings', async (c) => {
+publicRoutes.get('/settings', CONTENT_CACHE, async (c) => {
   const { results } = await c.env.DB.prepare(`SELECT key, value FROM settings`).all<{
     key: string;
     value: string;
@@ -26,7 +40,7 @@ publicRoutes.get('/settings', async (c) => {
 });
 
 // ---------- Timeline (Nossa Jornada) ----------
-publicRoutes.get('/timeline', async (c) => {
+publicRoutes.get('/timeline', CONTENT_CACHE, async (c) => {
   const { results } = await c.env.DB.prepare(
     `SELECT id, date_label, title, body, image_id, sort_order
        FROM timeline WHERE published = 1 ORDER BY sort_order, id`
@@ -35,7 +49,7 @@ publicRoutes.get('/timeline', async (c) => {
 });
 
 // ---------- Detalhes do grande dia ----------
-publicRoutes.get('/events', async (c) => {
+publicRoutes.get('/events', CONTENT_CACHE, async (c) => {
   const { results } = await c.env.DB.prepare(
     `SELECT id, kind, title, subtitle, info, info2, address, map_url, image_id, sort_order
        FROM events WHERE published = 1 ORDER BY sort_order, id`
@@ -44,7 +58,7 @@ publicRoutes.get('/events', async (c) => {
 });
 
 // ---------- Presentes ----------
-publicRoutes.get('/gifts', async (c) => {
+publicRoutes.get('/gifts', CONTENT_CACHE, async (c) => {
   const { results } = await c.env.DB.prepare(
     `SELECT id, title, description, image_id, kind, link_url, cta_label, sort_order
        FROM gifts WHERE published = 1 ORDER BY sort_order, id`
@@ -53,21 +67,32 @@ publicRoutes.get('/gifts', async (c) => {
 });
 
 // ---------- Galeria (fotos aprovadas) ----------
-publicRoutes.get('/photos', async (c) => {
+// Paginado: `?limit=&offset=`. O cliente sabe que há mais páginas quando
+// recebe exatamente `limit` itens — evita um COUNT(*) a cada request.
+publicRoutes.get('/photos', GUEST_CACHE, async (c) => {
+  const { limit, offset } = paginate(c.req.url, 60, 200);
   const { results } = await c.env.DB.prepare(
     `SELECT id, image_id, caption, uploader_name, source, width, height, sort_order, created_at
        FROM photos WHERE status = 'approved'
-      ORDER BY sort_order, created_at DESC, id DESC`
-  ).all();
+      ORDER BY sort_order, created_at DESC, id DESC
+      LIMIT ? OFFSET ?`
+  )
+    .bind(limit, offset)
+    .all();
   return c.json(results);
 });
 
 // ---------- Mural de recados (aprovados) ----------
-publicRoutes.get('/messages', async (c) => {
+publicRoutes.get('/messages', GUEST_CACHE, async (c) => {
+  const { limit, offset } = paginate(c.req.url, 50, 200);
   const { results } = await c.env.DB.prepare(
     `SELECT id, name, message, created_at
-       FROM messages WHERE status = 'approved' ORDER BY created_at DESC, id DESC`
-  ).all();
+       FROM messages WHERE status = 'approved'
+      ORDER BY created_at DESC, id DESC
+      LIMIT ? OFFSET ?`
+  )
+    .bind(limit, offset)
+    .all();
   return c.json(results);
 });
 

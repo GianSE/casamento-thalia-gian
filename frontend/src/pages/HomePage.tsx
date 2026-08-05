@@ -1,7 +1,7 @@
 import { useSettings } from '../hooks/useSettings';
 import { useSeo } from '../hooks/useSeo';
 import { useFetch } from '../hooks/useFetch';
-import { imgUrl } from '../lib/api';
+import { imgUrl, imgSrcSet, imgDims } from '../lib/api';
 import { Countdown } from '../components/Countdown/Countdown';
 import { Reveal } from '../components/Reveal/Reveal';
 import { Button } from '../components/Button/Button';
@@ -16,7 +16,9 @@ export default function HomePage() {
     description: `${s.site_title} vão se casar em ${s.wedding_date_label}. Confirme sua presença.`,
   });
 
-  const { data: photos } = useFetch<Photo[]>('/photos', []);
+  // Só a primeira foto interessa aqui — sem `limit` a home baixava a galeria
+  // inteira (com centenas de fotos de convidado, um JSON enorme à toa).
+  const { data: photos } = useFetch<Photo[]>('/photos?limit=1', []);
   const storyPhoto = photos?.[0];
 
   return (
@@ -57,8 +59,12 @@ export default function HomePage() {
               {storyPhoto ? (
                 <img
                   src={imgUrl(storyPhoto.image_id, 900)}
+                  srcSet={imgSrcSet(storyPhoto.image_id, [400, 600, 900])}
+                  sizes="(max-width: 900px) 92vw, 440px"
                   alt="Gian e Thalia"
                   loading="lazy"
+                  decoding="async"
+                  {...imgDims(storyPhoto.width, storyPhoto.height, 900)}
                 />
               ) : (
                 <div className={styles.storyPlaceholder} aria-hidden="true">

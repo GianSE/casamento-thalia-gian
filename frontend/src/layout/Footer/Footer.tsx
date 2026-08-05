@@ -55,10 +55,19 @@ export function Footer() {
           </div>
         )}
 
-        <p className={styles.copy}>
-          {s.site_title} — {year} · Feito com <Icon name="heart" size={13} className={styles.heart} /> para o
-          nosso grande dia.
-        </p>
+        <div className={styles.bottom}>
+          <p className={styles.copy}>
+            {s.site_title} — {year} · Feito com{' '}
+            <Icon name="heart" size={13} className={styles.heart} /> para o nosso grande dia.
+          </p>
+
+          {/* Acesso ao painel: discreto, porque só os noivos usam — mas sem
+              depender de decorar a URL. A rota é protegida por login. */}
+          <Link to="/admin" className={styles.admin}>
+            <Icon name="settings" size={13} />
+            Painel dos noivos
+          </Link>
+        </div>
       </div>
     </footer>
   );

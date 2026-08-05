@@ -19,6 +19,9 @@ export type IconName =
   | 'checkCircle'
   | 'xCircle'
   | 'upload'
+  | 'camera'
+  | 'cameraFlip'
+  | 'refresh'
   | 'copy'
   | 'trash'
   | 'plus'
@@ -101,6 +104,24 @@ const paths: Record<IconName, JSX.Element> = {
     </>
   ),
   upload: <path d="M12 16V4m0 0L7 9m5-5l5 5M4 20h16" />,
+  camera: (
+    <>
+      <path d="M3 8.5A1.5 1.5 0 0 1 4.5 7h2.2a1 1 0 0 0 .8-.4l1-1.3a1 1 0 0 1 .8-.4h4.4a1 1 0 0 1 .8.4l1 1.3a1 1 0 0 0 .8.4h2.2A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z" />
+      <circle cx="12" cy="13" r="3.6" />
+    </>
+  ),
+  cameraFlip: (
+    <>
+      <path d="M4 9a8 8 0 0 1 13-2.5M20 15A8 8 0 0 1 7 17.5" />
+      <path d="M4 5v4h4M20 19v-4h-4" />
+    </>
+  ),
+  refresh: (
+    <>
+      <path d="M4 12a8 8 0 0 1 13.7-5.7L20 8.5M20 12a8 8 0 0 1-13.7 5.7L4 15.5" />
+      <path d="M20 4v4.5h-4.5M4 20v-4.5h4.5" />
+    </>
+  ),
   copy: (
     <>
       <rect x="9" y="9" width="12" height="12" rx="2" />
